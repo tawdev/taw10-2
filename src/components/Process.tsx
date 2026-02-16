@@ -4,26 +4,29 @@ import React from "react";
 import { MousePointer2, FileText, CheckCircle } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import SplitTextReveal from "./SplitTextReveal";
-
-const steps = [
-    {
-        title: "Sélectionnez votre adresse",
-        description: "Choisissez l'une de nos adresses prestigieuses à Marrakech ou Laâyoune qui correspond le mieux à l'image de votre entreprise.",
-        icon: <MousePointer2 size={32} className="text-secondary" />,
-    },
-    {
-        title: "Complétez le formulaire en ligne",
-        description: "Remplissez notre formulaire simple et intuitif en quelques minutes. Toutes les démarches sont 100% en ligne, avec un accompagnement à chaque étape si nécessaire.",
-        icon: <FileText size={32} className="text-secondary" />,
-    },
-    {
-        title: "Recevez votre confirmation instantanée",
-        description: "En moins de 10 minutes, obtenez votre contrat de domiciliation et commencez à utiliser votre nouvelle adresse pour propulser votre business.",
-        icon: <CheckCircle size={32} className="text-secondary" />,
-    },
-];
+import { useTranslations } from "next-intl";
 
 const Process = () => {
+    const t = useTranslations('Process');
+
+    const steps = [
+        {
+            title: t('steps.0.title'),
+            description: t('steps.0.description'),
+            icon: <MousePointer2 size={32} className="text-secondary" />,
+        },
+        {
+            title: t('steps.1.title'),
+            description: t('steps.1.description'),
+            icon: <FileText size={32} className="text-secondary" />,
+        },
+        {
+            title: t('steps.2.title'),
+            description: t('steps.2.description'),
+            icon: <CheckCircle size={32} className="text-secondary" />,
+        },
+    ];
+
     return (
         <section className="py-32 bg-white relative overflow-hidden">
             {/* Decorative background elements */}
@@ -36,18 +39,18 @@ const Process = () => {
                         className="text-secondary font-bold uppercase tracking-[0.2em] text-sm mb-4 block"
                         type="chars"
                     >
-                        Comment ça marche ?
+                        {t('title')}
                     </SplitTextReveal>
                     <SplitTextReveal
                         className="text-5xl md:text-6xl font-bold text-primary mb-8"
                         type="words"
                         delay={0.2}
                     >
-                        Comment ça marche en 3 étapes ?
+                        {t('subtitle')}
                     </SplitTextReveal>
                     <ScrollReveal delay={0.4}>
                         <p className="text-gray-500 text-xl font-light">
-                            Complétez notre formulaire simple et rapide en quelques clics. Toutes les démarches se font en ligne.
+                            {t('description')}
                         </p>
                     </ScrollReveal>
                 </div>

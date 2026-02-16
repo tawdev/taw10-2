@@ -3,98 +3,101 @@
 import React from "react";
 import { Check, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import ScrollReveal from "./ScrollReveal";
 import SplitTextReveal from "./SplitTextReveal";
-
-const plans = [
-    {
-        name: "INTILAQA",
-        price: "3499",
-        features: [
-            { text: "Certificat Négatif", included: true },
-            { text: "L'enregistrement des statuts", included: true },
-            { text: "Inscription à la Patente", included: true },
-            { text: "Registre de Commerce", included: true },
-            { text: "Identifiant Fiscal", included: true },
-            { text: "Affiliation à la CNSS", included: true },
-            { text: "Annonce Légale", included: true },
-            { text: "Domiciliation dans une adresse prestigieuse (12 month)", included: false },
-            { text: "Model J", included: false },
-            { text: "Adhésion au service de télédéclaration DGI", included: false },
-            { text: "Adhésion au service de DAMANCOM", included: false },
-            { text: "Cachet", included: false },
-            { text: "Accompagnement à l'ouverture de compte Bancaire", included: false },
-            { text: "Site web", included: false },
-        ],
-        popular: false,
-    },
-    {
-        name: "INTILAQA PRO",
-        price: "4699",
-        features: [
-            { text: "Certificat Négatif", included: true },
-            { text: "L'enregistrement des statuts", included: true },
-            { text: "Inscription à la Patente", included: true },
-            { text: "Registre de Commerce", included: true },
-            { text: "Identifiant Fiscal", included: true },
-            { text: "Affiliation à la CNSS", included: true },
-            { text: "Annonce Légale", included: true },
-            { text: "Domiciliation dans une adresse prestigieuse (12 month)", included: true },
-            { text: "Model J", included: true },
-            { text: "Adhésion au service de télédéclaration DGI", included: true },
-            { text: "Adhésion au service de DAMANCOM", included: true },
-            { text: "Cachet", included: true },
-            { text: "Accompagnement à l'ouverture de compte Bancaire", included: true },
-            { text: "Site web", included: false },
-        ],
-        popular: true,
-    },
-    {
-        name: "INTILAQA PLUS",
-        price: "5999",
-        features: [
-            { text: "Certificat Négatif", included: true },
-            { text: "L'enregistrement des statuts", included: true },
-            { text: "Inscription à la Patente", included: true },
-            { text: "Registre de Commerce", included: true },
-            { text: "Identifiant Fiscal", included: true },
-            { text: "Affiliation à la CNSS", included: true },
-            { text: "Annonce Légale", included: true },
-            { text: "Domiciliation dans une adresse prestigieuse (24 month)", included: true },
-            { text: "Model J", included: true },
-            { text: "Adhésion au service de télédéclaration DGI", included: true },
-            { text: "Adhésion au service de DAMANCOM", included: true },
-            { text: "Cachet", included: true },
-            { text: "Accompagnement à l'ouverture de compte Bancaire", included: true },
-            { text: "Site web", included: false },
-        ],
-        popular: false,
-    },
-    {
-        name: "INTILAQA PREMIUM",
-        price: "8999",
-        features: [
-            { text: "Certificat Négatif", included: true },
-            { text: "L'enregistrement des statuts", included: true },
-            { text: "Inscription à la Patente", included: true },
-            { text: "Registre de Commerce", included: true },
-            { text: "Identifiant Fiscal", included: true },
-            { text: "Affiliation à la CNSS", included: true },
-            { text: "Annonce Légale", included: true },
-            { text: "Domiciliation dans une adresse prestigieuse (24 month)", included: true },
-            { text: "Model J", included: true },
-            { text: "Adhésion au service de télédéclaration DGI", included: true },
-            { text: "Adhésion au service de DAMANCOM", included: true },
-            { text: "Cachet", included: true },
-            { text: "Accompagnement à l'ouverture de compte Bancaire", included: true },
-            { text: "Site web", included: true },
-        ],
-        popular: false,
-    },
-];
+import { useTranslations } from "next-intl";
 
 const Pricing = () => {
+    const t = useTranslations('Pricing');
+
+    const plans = [
+        {
+            name: "intilaqa",
+            price: "3499",
+            features: [
+                { id: "certificat", included: true },
+                { id: "statuts", included: true },
+                { id: "patente", included: true },
+                { id: "rc", included: true },
+                { id: "if", included: true },
+                { id: "cnss", included: true },
+                { id: "annonce", included: true },
+                { id: "domiciliation_12", included: false },
+                { id: "model_j", included: false },
+                { id: "dgi", included: false },
+                { id: "damancom", included: false },
+                { id: "cachet", included: false },
+                { id: "compte_bancaire", included: false },
+                { id: "site_web", included: false },
+            ],
+            popular: false,
+        },
+        {
+            name: "intilaqa_pro",
+            price: "4699",
+            features: [
+                { id: "certificat", included: true },
+                { id: "statuts", included: true },
+                { id: "patente", included: true },
+                { id: "rc", included: true },
+                { id: "if", included: true },
+                { id: "cnss", included: true },
+                { id: "annonce", included: true },
+                { id: "domiciliation_12", included: true },
+                { id: "model_j", included: true },
+                { id: "dgi", included: true },
+                { id: "damancom", included: true },
+                { id: "cachet", included: true },
+                { id: "compte_bancaire", included: true },
+                { id: "site_web", included: false },
+            ],
+            popular: true,
+        },
+        {
+            name: "intilaqa_plus",
+            price: "5999",
+            features: [
+                { id: "certificat", included: true },
+                { id: "statuts", included: true },
+                { id: "patente", included: true },
+                { id: "rc", included: true },
+                { id: "if", included: true },
+                { id: "cnss", included: true },
+                { id: "annonce", included: true },
+                { id: "domiciliation_24", included: true },
+                { id: "model_j", included: true },
+                { id: "dgi", included: true },
+                { id: "damancom", included: true },
+                { id: "cachet", included: true },
+                { id: "compte_bancaire", included: true },
+                { id: "site_web", included: false },
+            ],
+            popular: false,
+        },
+        {
+            name: "intilaqa_premium",
+            price: "8999",
+            features: [
+                { id: "certificat", included: true },
+                { id: "statuts", included: true },
+                { id: "patente", included: true },
+                { id: "rc", included: true },
+                { id: "if", included: true },
+                { id: "cnss", included: true },
+                { id: "annonce", included: true },
+                { id: "domiciliation_24", included: true },
+                { id: "model_j", included: true },
+                { id: "dgi", included: true },
+                { id: "damancom", included: true },
+                { id: "cachet", included: true },
+                { id: "compte_bancaire", included: true },
+                { id: "site_web", included: true },
+            ],
+            popular: false,
+        },
+    ];
+
     return (
         <section id="tarifs" className="py-32 bg-white">
             <div className="container mx-auto px-4">
@@ -103,18 +106,18 @@ const Pricing = () => {
                         className="text-secondary font-bold uppercase tracking-[0.2em] text-sm mb-4 block"
                         type="chars"
                     >
-                        Nos Tarifs
+                        {t('title')}
                     </SplitTextReveal>
                     <SplitTextReveal
                         className="text-5xl md:text-6xl font-bold text-primary mb-8"
                         type="words"
                         delay={0.2}
                     >
-                        Transparence et Simplicité pour Tous Vos Besoins
+                        {t('subtitle')}
                     </SplitTextReveal>
                     <ScrollReveal delay={0.4}>
                         <p className="text-gray-500 text-xl font-light">
-                            Des formules adaptées à chaque étape de votre croissance. Pas de frais cachés.
+                            {t('description')}
                         </p>
                     </ScrollReveal>
                 </div>
@@ -132,17 +135,17 @@ const Pricing = () => {
                             >
                                 {plan.popular && (
                                     <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-secondary text-primary font-bold px-8 py-2 rounded-full text-xs uppercase tracking-[0.2em] shadow-lg">
-                                        POPULAIRE
+                                        {t('popular')}
                                     </div>
                                 )}
 
                                 <div className="mb-8 text-center">
                                     <h3 className={cn("text-xl font-bold mb-4", plan.popular ? "text-secondary" : "text-primary")}>
-                                        {plan.name}
+                                        {t(`plans.${plan.name}`)}
                                     </h3>
                                     <div className="flex items-baseline justify-center gap-1">
                                         <span className="text-4xl font-extrabold tracking-tighter">{plan.price}</span>
-                                        <span className={cn("text-sm font-medium uppercase", plan.popular ? "text-white/60" : "text-gray-400")}>Dhs HT</span>
+                                        <span className={cn("text-sm font-medium uppercase", plan.popular ? "text-white/60" : "text-gray-400")}>{t('dhs_ht')}</span>
                                     </div>
                                 </div>
 
@@ -162,14 +165,14 @@ const Pricing = () => {
                                                 !feature.included && (plan.popular ? "text-white/30" : "text-gray-400"),
                                                 feature.included && (plan.popular ? "text-white/90" : "text-gray-700")
                                             )}>
-                                                {feature.text}
+                                                {t(`features.${feature.id}`)}
                                             </span>
                                         </li>
                                     ))}
                                 </ul>
 
                                 <Link
-                                    href={`/?pack=${plan.name}#contact`}
+                                    href={`/?pack=${t(`plans.${plan.name}`)}#contact`}
                                     className={cn(
                                         "w-full block text-center py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-xl",
                                         plan.popular
@@ -177,7 +180,7 @@ const Pricing = () => {
                                             : "bg-cyan-400 text-primary hover:bg-primary hover:text-white"
                                     )}
                                 >
-                                    COMMENCER
+                                    {t('start')}
                                 </Link>
                             </div>
                         </ScrollReveal>

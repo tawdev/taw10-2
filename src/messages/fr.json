@@ -1,0 +1,250 @@
+{
+    "Navbar": {
+        "home": "Accueil",
+        "services": "Services",
+        "whyUs": "Pourquoi Nous",
+        "pricing": "Tarifs",
+        "contact": "Contact",
+        "consultation": "Consultation",
+        "hours": "Lundi-Samedi 09h - 20h"
+    },
+    "Hero": {
+        "title": "parmi les meilleurs societes de domiciliation et creation sur internet ou dans tout les centre taw10 ou maroc",
+        "subtitle": "TAW 10 n'est pas qu'une simple adresse. C'est l'élan qui propulse votre entreprise vers de nouveaux sommets. Agréée par l'État Marocain, notre mission est de transformer chaque étape de votre parcours entrepreneurial en une expérience simple, fluide, et surtout, adaptée à votre vision unique.",
+        "cta": "Lancer mon projet",
+        "badge": "Leader de la Domiciliation"
+    },
+    "Contact": {
+        "title": "Prêt à Lancer Votre Projet ?",
+        "subtitle": "Contactez-Nous",
+        "description": "Chez TAW 10, nous avons à cœur de transformer vos défis administratifs en opportunités de croissance. Parlons de votre vision.",
+        "form": {
+            "name": "Nom Complet",
+            "email": "Adresse Email",
+            "phone": "Téléphone",
+            "service": "Sélectionnez un service ou un pack",
+            "servicePlaceholder": "Choisissez un service ou un pack",
+            "message": "Message",
+            "messagePlaceholder": "Comment pouvons-nous vous accompagner ?",
+            "submit": "Envoyez"
+        },
+        "info": {
+            "email": "Email Direct",
+            "phone": "Téléphone",
+            "address": "Siège Social"
+        }
+    },
+    "Services": {
+        "title": "Nos Domaines d'Expertise",
+        "subtitle": "Solutions Complètes pour Entrepreneurs",
+        "description": "Chez TAW 10, nous propulsons vos ambitions avec des solutions sur-mesure et une expertise reconnue au cœur de Marrakech.",
+        "learnMore": "En savoir plus",
+        "items": {
+            "domiciliation-premium": {
+                "title": "Domiciliation Premium",
+                "text": "Offrez à votre entreprise l'élégance d'une adresse dans l'un des quartiers les plus convoités de Marrakech.",
+                "fullDescription": "La domiciliation premium chez TAW 10 n'est pas seulement une adresse postale. C'est un positionnement stratégique pour votre entreprise. Nous vous proposons des adresses prestigieuses à Marrakech, renforçant votre image de marque auprès de vos clients et partenaires. Notre service inclut la gestion de votre courrier, l'accès à des salles de réunion modernes et un support administratif dédié.",
+                "features": [
+                    "Adresse prestigieuse à Marrakech",
+                    "Gestion du courrier et colis",
+                    "Notification immédiate de réception",
+                    "Accès aux salles de réunion",
+                    "Support administratif multilingue"
+                ]
+            },
+            "creation-entreprise": {
+                "title": "Création d'Entreprise",
+                "text": "Faites naître votre projet en un clic. Nous prenons en charge toutes les formalités pour vous.",
+                "fullDescription": "Transformer une idée en entreprise peut être complexe. Notre équipe d'experts vous accompagne à chaque étape du processus de création au Maroc. Du choix de la forme juridique (SARL, Auto-entrepreneur, etc.) à l'obtention du RC et de l'Identifiant Fiscal, nous gérons tout pour vous permettre de vous concentrer sur votre business.",
+                "features": [
+                    "Conseil sur la forme juridique",
+                    "Rédaction des statuts",
+                    "Obtention du Certificat Négatif",
+                    "Inscription à la Patente et IF",
+                    "Support pour l'ouverture du compte bancaire"
+                ]
+            },
+            "secretariat-virtuel": {
+                "title": "Secrétariat Virtuel",
+                "text": "Gestion et numérisation quotidienne de votre courrier, fax et colis. Votre réalité quotidienne.",
+                "fullDescription": "Gérez votre entreprise à distance en toute sérénité. Notre service de secrétariat virtuel assure une permanence pour votre activité. Nous réceptionnons vos appels, gérons vos rendez-vous et numérisons votre courrier quotidiennement. Un bureau complet à votre service, sans les coûts fixes d'un secrétariat classique.",
+                "features": [
+                    "Accueil téléphonique personnalisé",
+                    "Gestion d'agenda",
+                    "Numérisation du courrier",
+                    "Scan et envoi d'emails",
+                    "Service de fax"
+                ]
+            },
+            "support-juridique": {
+                "title": "Support Juridique",
+                "text": "Modifications de statuts, transferts de siège, cessions de parts – chaque démarche est gérée par nos experts.",
+                "fullDescription": "La vie d'une entreprise est ponctuée de changements. Notre département juridique vous assiste dans toutes les modifications structurelles : augmentation de capital, transfert de siège social, changement de gérant ou cession de parts sociales. Nous garantissons la conformité de vos actes avec la législation marocaine en vigueur.",
+                "features": [
+                    "Modifications des statuts",
+                    "Transfert de siège social",
+                    "Cession de parts",
+                    "Procès-verbaux d'assemblées",
+                    "Veille juridique"
+                ]
+            },
+            "support-administratif": {
+                "title": "Support Administratif",
+                "text": "Libérez-vous des tâches administratives chronophages grâce à notre service de support personnalisé.",
+                "fullDescription": "Déléguez votre administration pour gagner en productivité. Nos assistants qualifiés gèrent pour vous vos déclarations CNSS, vos relations avec les administrations publiques et vos relances clients. Nous devenons votre back-office efficace pour que vous puissiez piloter votre croissance.",
+                "features": [
+                    "Gestion des déclarations sociales",
+                    "Relations administratives",
+                    "Relances clients",
+                    "Organisation de documents",
+                    "Assistance polyvalente"
+                ]
+            },
+            "conseil-strategique": {
+                "title": "Conseil Stratégique",
+                "text": "Nous vous accompagnons dans la croissance de votre entreprise grâce à notre conseil en développement.",
+                "fullDescription": "Prenez les bonnes décisions au bon moment. Nos consultants vous apportent un regard extérieur et expert sur votre stratégie de développement au Maroc. Analyse de marché, optimisation opérationnelle ou recherche de financements, nous sommes à vos côtés pour transformer vos ambitions en succès pérenne.",
+                "features": [
+                    "Plan de développement",
+                    "Optimisation des coûts",
+                    "Analyse stratégique",
+                    "Accompagnement opérationnel",
+                    "Réseautage business"
+                ]
+            }
+        }
+    },
+    "WhyUs": {
+        "title": "Pourquoi TAW 10 ?",
+        "subtitle": "Votre Succès est Notre Seule Mission",
+        "description": "Bien plus qu’une simple domiciliation, TAW 10 est le catalyseur de votre réussite entrepreneuriale au Maroc. Agréée par l’État, notre centre vous offre un environnement d'exception.",
+        "quote": "Nous ne nous contentons pas de vous donner une adresse ; nous vous offrons le prestige et l'élan nécessaires pour briller.",
+        "benefits": {
+            "0": "Instantanéité & Personnalisation",
+            "1": "Solutions de Croissance Avancées",
+            "2": "Expertise Administrative Complète",
+            "3": "Accompagnement de Bout en Bout"
+        },
+        "stats": {
+            "clients": "Clients de Confiance"
+        },
+        "direction": "DIRECTION TAW 10"
+    },
+    "Pricing": {
+        "title": "Nos Tarifs",
+        "subtitle": "Transparence et Simplicité pour Tous Vos Besoins",
+        "description": "Des formules adaptées à chaque étape de votre croissance. Pas de frais cachés.",
+        "dhs_ht": "Dhs HT",
+        "popular": "POPULAIRE",
+        "start": "COMMENCER",
+        "plans": {
+            "intilaqa": "INTILAQA",
+            "intilaqa_pro": "INTILAQA PRO",
+            "intilaqa_plus": "INTILAQA PLUS",
+            "intilaqa_premium": "INTILAQA PREMIUM"
+        },
+        "features": {
+            "certificat": "Certificat Négatif",
+            "statuts": "L'enregistrement des statuts",
+            "patente": "Inscription à la Patente",
+            "rc": "Registre de Commerce",
+            "if": "Identifiant Fiscal",
+            "cnss": "Affiliation à la CNSS",
+            "annonce": "Annonce Légale",
+            "domiciliation_12": "Domiciliation dans une adresse prestigieuse (12 mois)",
+            "domiciliation_24": "Domiciliation dans une adresse prestigieuse (24 mois)",
+            "model_j": "Model J",
+            "dgi": "Adhésion au service de télédéclaration DGI",
+            "damancom": "Adhésion au service de DAMANCOM",
+            "cachet": "Cachet",
+            "compte_bancaire": "Accompagnement à l'ouverture de compte Bancaire",
+            "site_web": "Site web"
+        }
+    },
+    "Process": {
+        "title": "Comment ça marche ?",
+        "subtitle": "Comment ça marche en 3 étapes ?",
+        "description": "Complétez notre formulaire simple et rapide en quelques clics. Toutes les démarches se font en ligne.",
+        "steps": {
+            "0": {
+                "title": "Sélectionnez votre adresse",
+                "description": "Choisissez l'une de nos adresses prestigieuses à Marrakech ou Laâyoune qui correspond le mieux à l'image de votre entreprise."
+            },
+            "1": {
+                "title": "Complétez le formulaire en ligne",
+                "description": "Remplissez notre formulaire simple et intuitif en quelques minutes. Toutes les démarches sont 100% en ligne, avec un accompagnement à chaque étape si nécessaire."
+            },
+            "2": {
+                "title": "Recevez votre confirmation instantanée",
+                "description": "En moins de 10 minutes, obtenez votre contrat de domiciliation et commencez à utiliser votre nouvelle adresse pour propulser votre business."
+            }
+        }
+    },
+    "Team": {
+        "title": "Rencontrez nos experts",
+        "subtitle": "Découvrez notre équipe d'experts dédiés à votre succès.",
+        "description": "Des professionnels passionnés qui mettent leur expertise à votre service pour transformer vos idées en succès.",
+        "members": {
+            "hicham": {
+                "role": "CEO",
+                "description": "PDG de TAW 10, expert en création d'entreprise et domiciliation au Maroc."
+            },
+            "salma": {
+                "role": "Département Commercial",
+                "description": "Spécialiste en vente et relation client, dédiée à votre satisfaction."
+            },
+            "afafe": {
+                "role": "Office Manager",
+                "description": "Gestionnaire de bureau expérimentée, garantissant le bon fonctionnement de nos services."
+            }
+        },
+        "cta": {
+            "title": "Prêt à discuter de votre projet ?",
+            "subtitle": "Prenez rendez-vous pour une consultation gratuite dès maintenant.",
+            "button": "COMMENCER MAINTENANT"
+        }
+    },
+    "Testimonials": {
+        "title": "Témoignages",
+        "subtitle": "Ce Que Nos Clients Disent",
+        "description": "Découvrez les témoignages de nos clients qui ont bénéficié de nos services de domiciliation et de gestion.",
+        "reviews": {
+            "0": {
+                "content": "TAW 10 a transformé notre expérience de domiciliation. Rapide, transparent et professionnel – une adresse prestigieuse qui booste vraiment notre image !",
+                "role": "Entrepreneur"
+            },
+            "1": {
+                "content": "Excellente expérience avec TAW 10. Le processus est simple, l'équipe est réactive, et le service de secrétariat virtuel est top. Recommandé sans hésitation.",
+                "role": "Manager"
+            },
+            "2": {
+                "content": "TAW 10 offre un service de domiciliation impeccable. Leur support administratif personnalisé est un véritable atout pour notre gestion quotidienne. Très satisfait !",
+                "role": "CEO Brand"
+            },
+            "3": {
+                "content": "Depuis que nous avons choisi TAW 10, notre entreprise a gagné en visibilité et en crédibilité. Leur accompagnement est exceptionnel, et leur service en ligne est très pratique.",
+                "role": "Entrepreneur"
+            }
+        }
+    },
+    "Footer": {
+        "description": "Votre partenaire de confiance pour la création d'entreprise et la domiciliation au Maroc.",
+        "quickLinks": "Liens Rapides",
+        "contact": "Contact",
+        "address": "Adresse",
+        "rights": "Tous droits réservés.",
+        "links": {
+            "home": "Accueil",
+            "services": "Nos Services",
+            "pricing": "Nos Tarifs",
+            "contact": "Contact"
+        }
+    },
+    "ServiceDetail": {
+        "notFound": "Service non trouvé",
+        "back": "Retour aux services",
+        "overview": "Aperçu du Service",
+        "quote": "Demander un devis",
+        "whatWeOffer": "Ce que nous offrons :"
+    }
+}

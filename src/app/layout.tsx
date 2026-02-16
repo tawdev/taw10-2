@@ -1,48 +1,9 @@
-import type { Metadata } from "next";
-import { Outfit, Cairo } from "next/font/google";
-import "./globals.css";
-
-const outfit = Outfit({
-  variable: "--font-outfit",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const cairo = Cairo({
-  variable: "--font-cairo",
-  subsets: ["arabic"],
-  display: "swap",
-});
-
-export const metadata: Metadata = {
-  title: "TAW 10 - Domiciliation et Création d'Entreprise au Maroc",
-  description: "TAW 10 est votre partenaire de confiance pour la domiciliation d'entreprises et la création de sociétés au Maroc.",
-};
-
-import SmoothScroll from "@/components/SmoothScroll";
-import CustomCursor from "@/components/CustomCursor";
-import Preloader from "@/components/Preloader";
-import WhatsappContact from "@/components/WhatsappContact";
-
+// This layout is only used for 404/500 pages outside of the [locale] scope
+// or initial redirect. The main app layout is in [locale]/layout.tsx
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="fr" className="scroll-smooth">
-      <body
-        className={`${outfit.variable} ${cairo.variable} antialiased selection:bg-secondary/30`}
-      >
-        <Preloader />
-        <SmoothScroll>
-          <CustomCursor />
-          <div className="fouc-guard opacity-0">
-            {children}
-          </div>
-          <WhatsappContact />
-        </SmoothScroll>
-      </body>
-    </html>
-  );
+  return children;
 }

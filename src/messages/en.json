@@ -1,0 +1,250 @@
+{
+    "Navbar": {
+        "home": "Home",
+        "services": "Services",
+        "whyUs": "Why Us",
+        "pricing": "Pricing",
+        "contact": "Contact",
+        "consultation": "Consultation",
+        "hours": "Mon-Sat 09am - 08pm"
+    },
+    "Hero": {
+        "title": "Among the best in setting up and establishing companies online or from our offices in Morocco.",
+        "subtitle": "TAW 10 is not just a simple address. It's the momentum that propels your business to new heights. Approved by the Moroccan State, our mission is to transform every step of your entrepreneurial journey into a simple, smooth experience, and above all, tailored to your unique vision.",
+        "cta": "Start my project",
+        "badge": "Domiciliation Leader"
+    },
+    "Contact": {
+        "title": "Ready to Launch Your Project?",
+        "subtitle": "Contact Us",
+        "description": "At TAW 10, we are committed to turning your administrative challenges into growth opportunities. Let's talk about your vision.",
+        "form": {
+            "name": "Full Name",
+            "email": "Email Address",
+            "phone": "Phone",
+            "service": "Select a service or pack",
+            "servicePlaceholder": "Choose a service or pack",
+            "message": "Message",
+            "messagePlaceholder": "How can we help you?",
+            "submit": "Send"
+        },
+        "info": {
+            "email": "Direct Email",
+            "phone": "Phone",
+            "address": "Headquarters"
+        }
+    },
+    "Services": {
+        "title": "Our Areas of Expertise",
+        "subtitle": "Complete Solutions for Entrepreneurs",
+        "description": "At TAW 10, we propel your ambitions with tailored solutions and recognized expertise in the heart of Marrakech.",
+        "learnMore": "Learn more",
+        "items": {
+            "domiciliation-premium": {
+                "title": "Premium Domiciliation",
+                "text": "Give your company the elegance of an address in one of the most coveted neighborhoods of Marrakech.",
+                "fullDescription": "Premium domiciliation at TAW 10 is not just a mailing address. It is a strategic positioning for your company. We offer you prestigious addresses in Marrakech, strengthening your brand image with your clients and partners. Our service includes mail management, access to modern meeting rooms, and dedicated administrative support.",
+                "features": [
+                    "Prestigious address in Marrakech",
+                    "Mail and parcel management",
+                    "Immediate receipt notification",
+                    "Access to meeting rooms",
+                    "Multilingual administrative support"
+                ]
+            },
+            "creation-entreprise": {
+                "title": "Business Creation",
+                "text": "Launch your project in one click. We take care of all formalities for you.",
+                "fullDescription": "Transforming an idea into a business can be complex. Our team of experts accompanies you at every step of the creation process in Morocco. From choosing the legal form (LLC, Self-entrepreneur, etc.) to obtaining the RC and Fiscal Identifier, we manage everything so you can focus on your business.",
+                "features": [
+                    "Advice on legal form",
+                    "Drafting of statutes",
+                    "Obtaining Negative Certificate",
+                    "Registration for Professional Tax and IF",
+                    "Support for bank account opening"
+                ]
+            },
+            "secretariat-virtuel": {
+                "title": "Virtual Secretariat",
+                "text": "Daily management and digitization of your mail, faxes, and parcels. Your daily reality.",
+                "fullDescription": "Manage your business remotely with peace of mind. Our virtual secretariat service ensures continuity for your activity. We answer your calls, manage your appointments, and digitize your mail daily. A complete office at your service, without the fixed costs of a traditional secretariat.",
+                "features": [
+                    "Personalized telephone reception",
+                    "Agenda management",
+                    "Mail scanning",
+                    "Scan and email sending",
+                    "Fax service"
+                ]
+            },
+            "support-juridique": {
+                "title": "Legal Support",
+                "text": "Statute modifications, head office transfers, share transfers – every step is managed by our experts.",
+                "fullDescription": "The life of a company is punctuated by changes. Our legal department assists you in all structural modifications: capital increase, head office transfer, manager change, or share transfer. We guarantee the compliance of your acts with current Moroccan legislation.",
+                "features": [
+                    "Statute modifications",
+                    "Head office transfer",
+                    "Share transfer",
+                    "General assembly minutes",
+                    "Legal monitoring"
+                ]
+            },
+            "support-administratif": {
+                "title": "Administrative Support",
+                "text": "Free yourself from time-consuming administrative tasks with our personalized support service.",
+                "fullDescription": "Delegate your administration to gain productivity. Our qualified assistants manage your CNSS declarations, your relations with public administrations, and your client follow-ups for you. We become your efficient back-office so you can drive your growth.",
+                "features": [
+                    "Social declaration management",
+                    "Administrative relations",
+                    "Client follow-ups",
+                    "Document organization",
+                    "Versatile assistance"
+                ]
+            },
+            "conseil-strategique": {
+                "title": "Strategic Consulting",
+                "text": "We accompany you in your company's growth thanks to our development consulting.",
+                "fullDescription": "Make the right decisions at the right time. Our consultants bring an external and expert perspective on your development strategy in Morocco. Market analysis, operational optimization, or funding search, we are by your side to turn your ambitions into lasting success.",
+                "features": [
+                    "Development plan",
+                    "Cost optimization",
+                    "Strategic analysis",
+                    "Operational support",
+                    "Business networking"
+                ]
+            }
+        }
+    },
+    "WhyUs": {
+        "title": "Why TAW 10?",
+        "subtitle": "Your Success is Our Only Mission",
+        "description": "More than just a domiciliation, TAW 10 is the catalyst for your entrepreneurial success in Morocco. State-approved, our center offers you an exceptional environment.",
+        "quote": "We don't just give you an address; we offer you the prestige and momentum needed to shine.",
+        "benefits": {
+            "0": "Immediacy & Personalization",
+            "1": "Advanced Growth Solutions",
+            "2": "Comprehensive Administrative Expertise",
+            "3": "End-to-End Support"
+        },
+        "stats": {
+            "clients": "Trusted Clients"
+        },
+        "direction": "TAW 10 MANAGEMENT"
+    },
+    "Pricing": {
+        "title": "Our Pricing",
+        "subtitle": "Transparency and Simplicity for All Your Needs",
+        "description": "Packages adapted to every stage of your growth. No hidden fees.",
+        "dhs_ht": "Dhs Excl. Tax",
+        "popular": "POPULAR",
+        "start": "START",
+        "plans": {
+            "intilaqa": "INTILAQA",
+            "intilaqa_pro": "INTILAQA PRO",
+            "intilaqa_plus": "INTILAQA PLUS",
+            "intilaqa_premium": "INTILAQA PREMIUM"
+        },
+        "features": {
+            "certificat": "Negative Certificate",
+            "statuts": "Registration of Statutes",
+            "patente": "Professional Tax Registration",
+            "rc": "Commercial Register",
+            "if": "Fiscal Identifier",
+            "cnss": "CNSS Affiliation",
+            "annonce": "Legal Announcement",
+            "domiciliation_12": "Domiciliation in a prestigious address (12 months)",
+            "domiciliation_24": "Domiciliation in a prestigious address (24 months)",
+            "model_j": "Model J",
+            "dgi": "DGI E-filing Service Access",
+            "damancom": "DAMANCOM Service Access",
+            "cachet": "Stamp",
+            "compte_bancaire": "Bank Account Opening Support",
+            "site_web": "Website"
+        }
+    },
+    "Process": {
+        "title": "How it works?",
+        "subtitle": "How it works in 3 steps?",
+        "description": "Complete our simple and fast form in a few clicks. All procedures are done online.",
+        "steps": {
+            "0": {
+                "title": "Select your address",
+                "description": "Choose one of our prestigious addresses in Marrakech or Laâyoune that best matches your company's image."
+            },
+            "1": {
+                "title": "Complete the online form",
+                "description": "Fill out our simple and intuitive form in minutes. All steps are 100% online, with support at every step if needed."
+            },
+            "2": {
+                "title": "Receive your instant confirmation",
+                "description": "In less than 10 minutes, get your domiciliation contract and start using your new address to propel your business."
+            }
+        }
+    },
+    "Team": {
+        "title": "Meet Our Experts",
+        "subtitle": "Discover our team of experts dedicated to your success.",
+        "description": "Passionate professionals who put their expertise at your service to turn your ideas into success.",
+        "members": {
+            "hicham": {
+                "role": "CEO",
+                "description": "CEO of TAW 10, expert in business creation and domiciliation in Morocco."
+            },
+            "salma": {
+                "role": "Sales Department",
+                "description": "Sales and customer relations specialist, dedicated to your satisfaction."
+            },
+            "afafe": {
+                "role": "Office Manager",
+                "description": "Experienced office manager, ensuring the smooth running of our services."
+            }
+        },
+        "cta": {
+            "title": "Ready to discuss your project?",
+            "subtitle": "Book a free consultation now.",
+            "button": "START NOW"
+        }
+    },
+    "Testimonials": {
+        "title": "Testimonials",
+        "subtitle": "What Our Clients Say",
+        "description": "Discover testimonials from our clients who have benefited from our domiciliation and management services.",
+        "reviews": {
+            "0": {
+                "content": "TAW 10 transformed our domiciliation experience. Fast, transparent, and professional – a prestigious address that truly boosts our image!",
+                "role": "Entrepreneur"
+            },
+            "1": {
+                "content": "Excellent experience with TAW 10. The process is simple, the team is responsive, and the virtual secretariat service is top-notch. Recommended without hesitation.",
+                "role": "Manager"
+            },
+            "2": {
+                "content": "TAW 10 offers impeccable domiciliation service. Their personalized administrative support is a real asset for our daily management. Very satisfied!",
+                "role": "CEO Brand"
+            },
+            "3": {
+                "content": "Since we chose TAW 10, our company has gained visibility and credibility. Their support is exceptional, and their online service is very practical.",
+                "role": "Entrepreneur"
+            }
+        }
+    },
+    "Footer": {
+        "description": "Your trusted partner for business creation and domiciliation in Morocco.",
+        "quickLinks": "Quick Links",
+        "contact": "Contact",
+        "address": "Address",
+        "rights": "All rights reserved.",
+        "links": {
+            "home": "Home",
+            "services": "Our Services",
+            "pricing": "Our Pricing",
+            "contact": "Contact"
+        }
+    },
+    "ServiceDetail": {
+        "notFound": "Service not found",
+        "back": "Back to services",
+        "overview": "Service Overview",
+        "quote": "Request a Quote",
+        "whatWeOffer": "What we offer:"
+    }
+}

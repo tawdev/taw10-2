@@ -6,29 +6,32 @@ import { Linkedin, Mail, ArrowRight } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import SplitTextReveal from "./SplitTextReveal";
 import MagneticButton from "./MagneticButton";
-
-const teamMembers = [
-    {
-        name: "Hicham MHAMEDI",
-        role: "CEO",
-        description: "PDG de TAW 10, expert en création d'entreprise et domiciliation au Maroc.",
-        image: "/images/team/hicham.jpeg",
-    },
-    {
-        name: "Salma AAOUAD",
-        role: "Sales Department",
-        description: "Spécialiste en vente et relation client, dédiée à votre satisfaction.",
-        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800",
-    },
-    {
-        name: "AFAFE KHLIFAL",
-        role: "Office Manager",
-        description: "Gestionnaire de bureau expérimentée, garantissant le bon fonctionnement de nos services.",
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800",
-    },
-];
+import { useTranslations } from "next-intl";
 
 const Team = () => {
+    const t = useTranslations('Team');
+
+    const teamMembers = [
+        {
+            name: "Hicham MHAMEDI",
+            role: t('members.hicham.role'),
+            description: t('members.hicham.description'),
+            image: "/images/team/hicham.jpeg",
+        },
+        {
+            name: "Salma AAOUAD",
+            role: t('members.salma.role'),
+            description: t('members.salma.description'),
+            image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800",
+        },
+        {
+            name: "AFAFE KHLIFAL",
+            role: t('members.afafe.role'),
+            description: t('members.afafe.description'),
+            image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800",
+        },
+    ];
+
     return (
         <section className="py-32 bg-white relative overflow-hidden">
             <div className="container mx-auto px-4">
@@ -38,19 +41,19 @@ const Team = () => {
                             className="text-secondary font-bold uppercase tracking-[0.2em] text-sm mb-4 block"
                             type="chars"
                         >
-                            Meet With Our Expert
+                            {t('title')}
                         </SplitTextReveal>
                         <SplitTextReveal
                             className="text-5xl md:text-6xl font-bold text-primary mb-0"
                             type="words"
                             delay={0.2}
                         >
-                            Découvrez notre équipe d&apos;experts dédiés à votre succès.
+                            {t('subtitle')}
                         </SplitTextReveal>
                     </div>
                     <ScrollReveal delay={0.4}>
                         <p className="text-gray-500 text-xl font-light max-w-md">
-                            Des professionnels passionnés qui mettent leur expertise à votre service pour transformer vos idées en succès.
+                            {t('description')}
                         </p>
                     </ScrollReveal>
                 </div>
@@ -102,8 +105,8 @@ const Team = () => {
                         <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-[100px] -z-0 translate-x-1/2 -translate-y-1/2" />
 
                         <div className="relative z-10">
-                            <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Prêt à discuter de votre projet ?</h2>
-                            <p className="text-white/60 text-xl font-light">Prenez rendez-vous pour une consultation gratuite dès maintenant.</p>
+                            <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">{t('cta.title')}</h2>
+                            <p className="text-white/60 text-xl font-light">{t('cta.subtitle')}</p>
                         </div>
 
                         <MagneticButton>
@@ -111,7 +114,7 @@ const Team = () => {
                                 href="#contact"
                                 className="bg-secondary text-primary px-10 py-5 rounded-full font-bold text-lg flex items-center gap-4 hover:bg-white transition-all shadow-xl group/btn"
                             >
-                                COMMENCER MAINTENANT
+                                {t('cta.button')}
                                 <ArrowRight size={22} className="group-hover/btn:translate-x-2 transition-transform" />
                             </a>
                         </MagneticButton>

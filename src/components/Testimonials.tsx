@@ -4,35 +4,38 @@ import React from "react";
 import { Quote, Star } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import SplitTextReveal from "./SplitTextReveal";
-
-const testimonials = [
-    {
-        name: "Paddy Hardy",
-        role: "Entrepreneur",
-        content: "TAW 10 a transformé notre expérience de domiciliation. Rapide, transparent et professionnel – une adresse prestigieuse qui booste vraiment notre image !",
-        stars: 5,
-    },
-    {
-        name: "Hari Wheatley",
-        role: "Manager",
-        content: "Excellente expérience avec TAW 10. Le processus est simple, l'équipe est réactive, et le service de secrétariat virtuel est top. Recommandé sans hésitation.",
-        stars: 5,
-    },
-    {
-        name: "Priscilla Russo",
-        role: "CEO Brand",
-        content: "TAW 10 offre un service de domiciliation impeccable. Leur support administratif personnalisé est un véritable atout pour notre gestion quotidienne. Très satisfait !",
-        stars: 5,
-    },
-    {
-        name: "Fannie Sanders",
-        role: "Entrepreneur",
-        content: "Depuis que nous avons choisi TAW 10, notre entreprise a gagné en visibilité et en crédibilité. Leur accompagnement est exceptionnel, et leur service en ligne est très pratique.",
-        stars: 5,
-    },
-];
+import { useTranslations } from "next-intl";
 
 const Testimonials = () => {
+    const t = useTranslations('Testimonials');
+
+    const testimonials = [
+        {
+            name: "Paddy Hardy",
+            role: t('reviews.0.role'),
+            content: t('reviews.0.content'),
+            stars: 5,
+        },
+        {
+            name: "Hari Wheatley",
+            role: t('reviews.1.role'),
+            content: t('reviews.1.content'),
+            stars: 5,
+        },
+        {
+            name: "Priscilla Russo",
+            role: t('reviews.2.role'),
+            content: t('reviews.2.content'),
+            stars: 5,
+        },
+        {
+            name: "Fannie Sanders",
+            role: t('reviews.3.role'),
+            content: t('reviews.3.content'),
+            stars: 5,
+        },
+    ];
+
     return (
         <section id="temoignages" className="py-32 bg-primary text-white overflow-hidden relative">
             {/* Decorative background gradients */}
@@ -47,18 +50,18 @@ const Testimonials = () => {
                         className="text-secondary font-bold uppercase tracking-[0.2em] text-sm mb-4 block"
                         type="chars"
                     >
-                        Témoignages
+                        {t('title')}
                     </SplitTextReveal>
                     <SplitTextReveal
                         className="text-5xl md:text-6xl font-bold mb-8 tracking-tight"
                         type="words"
                         delay={0.2}
                     >
-                        Ce Que Nos Clients Disent
+                        {t('subtitle')}
                     </SplitTextReveal>
                     <ScrollReveal delay={0.4}>
                         <p className="text-white/60 text-xl font-light">
-                            Découvrez les témoignages de nos clients qui ont bénéficié de nos services de domiciliation et de gestion.
+                            {t('description')}
                         </p>
                     </ScrollReveal>
                 </div>

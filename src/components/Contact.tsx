@@ -7,8 +7,10 @@ import { useSearchParams } from "next/navigation";
 import ScrollReveal from "./ScrollReveal";
 import MagneticButton from "./MagneticButton";
 import SplitTextReveal from "./SplitTextReveal";
+import { useTranslations } from "next-intl";
 
 const ContactContent = () => {
+    const t = useTranslations('Contact');
     const searchParams = useSearchParams();
     const packParam = searchParams.get("pack");
     const [selectedPack, setSelectedPack] = useState("");
@@ -83,20 +85,20 @@ const ContactContent = () => {
                                 className="text-secondary font-bold uppercase tracking-[0.2em] text-sm mb-6 block"
                                 type="chars"
                             >
-                                Contactez-Nous
+                                {t('subtitle')}
                             </SplitTextReveal>
                             <SplitTextReveal
                                 className="text-5xl md:text-6xl font-bold text-primary mb-10 leading-[1.1]"
                                 type="words"
                                 delay={0.2}
                             >
-                                Prêt à Lancer Votre Projet ?
+                                {t('title')}
                             </SplitTextReveal>
                         </div>
 
                         <ScrollReveal delay={0.4}>
                             <p className="text-gray-500 text-xl mb-16 leading-relaxed font-light">
-                                Chez TAW 10, nous avons à cœur de transformer vos défis administratifs en opportunités de croissance. Parlons de votre vision.
+                                {t('description')}
                             </p>
 
                             <div className="space-y-10">
@@ -105,7 +107,7 @@ const ContactContent = () => {
                                         <Mail className="w-7 h-7" />
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-primary mb-2 text-xl tracking-tight">Email Direct</h4>
+                                        <h4 className="font-bold text-primary mb-2 text-xl tracking-tight">{t('info.email')}</h4>
                                         <a href="mailto:Contact@taw10.ma" className="text-gray-500 text-lg hover:text-secondary transition-colors underline decoration-secondary/30 underline-offset-4">Contact@taw10.ma</a>
                                     </div>
                                 </div>
@@ -115,7 +117,7 @@ const ContactContent = () => {
                                         <Phone className="w-7 h-7" />
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-primary mb-2 text-xl tracking-tight">Téléphone</h4>
+                                        <h4 className="font-bold text-primary mb-2 text-xl tracking-tight">{t('info.phone')}</h4>
                                         <div className="space-y-2">
                                             <p className="text-gray-500 text-lg">+212 52430-8038</p>
                                             <p className="text-gray-500 text-lg">+212 607790956</p>
@@ -128,9 +130,9 @@ const ContactContent = () => {
                                         <MapPin className="w-7 h-7" />
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-primary mb-2 text-xl tracking-tight">Siège Social</h4>
+                                        <h4 className="font-bold text-primary mb-2 text-xl tracking-tight">{t('info.address')}</h4>
                                         <p className="text-gray-500 text-lg">N, TAW10, lot Iguder, 48 AV Alla El Fassi, Marrakech</p>
-                                        <p className="text-secondary font-bold text-sm uppercase tracking-widest mt-2">Ouvert du Lundi au Samedi</p>
+                                        <p className="text-secondary font-bold text-sm uppercase tracking-widest mt-2">{t('info.address')}</p>
                                     </div>
                                 </div>
                             </div>
@@ -149,21 +151,21 @@ const ContactContent = () => {
 
                                 <form className="space-y-6 relative z-10" onSubmit={handleSubmit}>
                                     <div className="space-y-2">
-                                        <label className="text-xs font-bold text-primary uppercase tracking-widest ml-1">Nom Complet</label>
+                                        <label className="text-xs font-bold text-primary uppercase tracking-widest ml-1">{t('form.name')}</label>
                                         <input
                                             type="text"
                                             name="name"
                                             value={formData.name}
                                             onChange={handleChange}
                                             required
-                                            placeholder="Votre nom"
+                                            placeholder={t('form.name')}
                                             className="w-full px-7 py-4 rounded-2xl bg-blue-50/30 border-gray-100 focus:bg-white focus:border-secondary focus:ring-4 focus:ring-secondary/5 transition-all outline-none font-medium text-sm shadow-sm text-primary"
                                         />
                                     </div>
 
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div className="space-y-2">
-                                            <label className="text-xs font-bold text-primary uppercase tracking-widest ml-1">Address Email</label>
+                                            <label className="text-xs font-bold text-primary uppercase tracking-widest ml-1">{t('form.email')}</label>
                                             <input
                                                 type="email"
                                                 name="email"
@@ -175,7 +177,7 @@ const ContactContent = () => {
                                             />
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-xs font-bold text-primary uppercase tracking-widest ml-1">Telephone</label>
+                                            <label className="text-xs font-bold text-primary uppercase tracking-widest ml-1">{t('form.phone')}</label>
                                             <input
                                                 type="tel"
                                                 name="phone"
@@ -189,14 +191,14 @@ const ContactContent = () => {
                                     </div>
 
                                     <div className="space-y-2">
-                                        <label className="text-xs font-bold text-primary uppercase tracking-widest ml-1">Sélectionnez un service ou un pack</label>
+                                        <label className="text-xs font-bold text-primary uppercase tracking-widest ml-1">{t('form.service')}</label>
                                         <div className="relative">
                                             <select
                                                 value={selectedPack}
                                                 onChange={(e) => setSelectedPack(e.target.value)}
                                                 className="w-full px-7 py-4 rounded-2xl bg-blue-50/30 border-gray-100 focus:bg-white focus:border-secondary focus:ring-4 focus:ring-secondary/5 transition-all outline-none appearance-none font-medium text-sm cursor-pointer text-primary shadow-sm"
                                             >
-                                                <option value="" disabled className="text-gray-400">Choisissez un service ou un pack</option>
+                                                <option value="" disabled className="text-gray-400">{t('form.service')}</option>
                                                 <option value="Pack INTILAQA" className="text-primary bg-white">Pack INTILAQA</option>
                                                 <option value="Pack INTILAQA PRO" className="text-primary bg-white">Pack INTILAQA PRO</option>
                                                 <option value="Pack INTILAQA PLUS" className="text-primary bg-white">Pack INTILAQA PLUS</option>
@@ -207,14 +209,14 @@ const ContactContent = () => {
                                     </div>
 
                                     <div className="space-y-2">
-                                        <label className="text-xs font-bold text-primary uppercase tracking-widest ml-1">Message</label>
+                                        <label className="text-xs font-bold text-primary uppercase tracking-widest ml-1">{t('form.message')}</label>
                                         <textarea
                                             rows={3}
                                             name="message"
                                             value={formData.message}
                                             onChange={handleChange}
                                             required
-                                            placeholder="Comment pouvons-nous vous accompagner ?"
+                                            placeholder={t('form.message')}
                                             className="w-full px-7 py-4 rounded-2xl bg-blue-50/30 border-gray-100 focus:bg-white focus:border-secondary focus:ring-4 focus:ring-secondary/5 transition-all outline-none resize-none font-medium text-sm text-primary shadow-sm"
                                         ></textarea>
                                     </div>
@@ -224,7 +226,7 @@ const ContactContent = () => {
                                             type="submit"
                                             className="w-full bg-primary text-white py-5 rounded-2xl font-bold text-lg hover:bg-primary-light transition-all shadow-xl flex items-center justify-center gap-3 group/btn"
                                         >
-                                            Envoyez
+                                            {t('form.submit')}
                                             <Send size={20} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform text-secondary" />
                                         </button>
                                     </MagneticButton>

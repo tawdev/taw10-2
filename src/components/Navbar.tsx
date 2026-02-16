@@ -2,13 +2,17 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link, usePathname, useRouter } from "@/navigation";
+import { useLocale, useTranslations } from "next-intl";
 import { Menu, X, Phone, Clock, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { gsap, useGSAP } from "@/lib/gsap-animations";
 import MagneticButton from "./MagneticButton";
 
 const Navbar = () => {
+    const t = useTranslations('Navbar');
+    const locale = useLocale();
+    const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
@@ -59,11 +63,11 @@ const Navbar = () => {
     }, []);
 
     const navLinks = [
-        { name: "Accueil", href: "#" },
-        { name: "Services", href: "#services" },
-        { name: "Pourquoi Nous", href: "#pourquoi" },
-        { name: "Tarifs", href: "#tarifs" },
-        { name: "Contact", href: "#contact" },
+        { name: t('home'), href: "/" },
+        { name: t('services'), href: "/#services" },
+        { name: t('whyUs'), href: "/#pourquoi" },
+        { name: t('pricing'), href: "/#tarifs" },
+        { name: t('contact'), href: "/#contact" },
     ];
 
     return (
@@ -74,6 +78,7 @@ const Navbar = () => {
                 isVisible ? "translate-y-0" : "-translate-y-full",
                 scrolled ? "py-2" : "py-0"
             )}
+            dir={locale === 'ar' ? 'rtl' : 'ltr'}
         >
             {/* Top Bar - Fades out on scroll */}
             <div
@@ -83,11 +88,14 @@ const Navbar = () => {
                     scrolled ? "h-0 opacity-0" : "h-auto opacity-100"
                 )}
             >
-                <div className="container mx-auto px-6 flex justify-between items-center text-[11px] uppercase tracking-[0.2em] font-bold">
+                <div className={cn(
+                    "container mx-auto px-6 flex justify-between items-center text-[11px] font-bold uppercase",
+                    locale === 'ar' ? "tracking-normal" : "tracking-[0.2em]"
+                )}>
                     <div className="flex items-center gap-8">
                         <span className="flex items-center gap-2">
                             <Clock size={12} className="text-secondary" />
-                            Lundi-Samedi 09h - 20h
+                            {t('hours')}
                         </span>
                         <span className="flex items-center gap-2">
                             <Mail size={12} className="text-secondary" />
@@ -100,9 +108,11 @@ const Navbar = () => {
                             +212 52430-8038
                         </a>
                         <div className="flex items-center gap-3">
-                            <Link href="?lang=fr" className="text-secondary underline decoration-secondary/30 underline-offset-4">FR</Link>
+                            <Link href={pathname} locale="fr" className={cn("hover:text-secondary transition-colors", locale === 'fr' ? "text-secondary underline decoration-secondary/30 underline-offset-4" : "opacity-60")}>FR</Link>
                             <span className="text-white/20">/</span>
-                            <Link href="?lang=ar" className="hover:text-secondary transition-colors opacity-60">AR</Link>
+                            <Link href={pathname} locale="ar" className={cn("hover:text-secondary transition-colors", locale === 'ar' ? "text-secondary underline decoration-secondary/30 underline-offset-4" : "opacity-60")}>AR</Link>
+                            <span className="text-white/20">/</span>
+                            <Link href={pathname} locale="en" className={cn("hover:text-secondary transition-colors", locale === 'en' ? "text-secondary underline decoration-secondary/30 underline-offset-4" : "opacity-60")}>EN</Link>
                         </div>
                     </div>
                 </div>
@@ -138,7 +148,10 @@ const Navbar = () => {
                             <li key={link.name}>
                                 <Link
                                     href={link.href}
-                                    className="text-white/80 text-sm font-bold uppercase tracking-widest hover:text-secondary transition-colors relative group"
+                                    className={cn(
+                                        "text-white/80 text-sm font-bold uppercase hover:text-secondary transition-colors relative group",
+                                        locale === 'ar' ? "tracking-normal" : "tracking-widest"
+                                    )}
                                 >
                                     {link.name}
                                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-500 group-hover:w-full" />
@@ -149,13 +162,16 @@ const Navbar = () => {
 
                     {/* CTA with Magnetic Effect */}
                     <div className="hidden lg:flex items-center gap-4">
-                        <div className="h-8 w-[1px] bg-gray-100 mr-2" />
+                        <div className="h-8 w-[1px] bg-gray-100 me-2" />
                         <MagneticButton>
                             <Link
-                                href="#contact"
-                                className="bg-secondary text-primary px-8 py-3 rounded-full text-xs font-black uppercase tracking-[0.2em] shadow-lg hover:shadow-2xl transition-all block"
+                                href="/#contact"
+                                className={cn(
+                                    "bg-secondary text-primary px-8 py-3 rounded-full text-xs font-black uppercase shadow-lg hover:shadow-2xl transition-all block",
+                                    locale === 'ar' ? "tracking-normal" : "tracking-[0.2em]"
+                                )}
                             >
-                                Consultation
+                                {t('consultation')}
                             </Link>
                         </MagneticButton>
                     </div>
@@ -212,16 +228,16 @@ const Navbar = () => {
                         isOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                     )}>
                         <Link
-                            href="#contact"
+                            href="/#contact"
                             className="bg-secondary text-primary px-12 py-5 rounded-full font-black uppercase tracking-[0.2em] shadow-xl"
                             onClick={() => setIsOpen(false)}
                         >
-                            Consultation
+                            {t('consultation')}
                         </Link>
                         <div className="flex items-center gap-8 text-white/40 font-bold uppercase tracking-widest text-sm pt-8 border-t border-white/5 w-64 justify-center">
-                            <span className="text-secondary underline decoration-secondary/30 underline-offset-8">FR</span>
-                            <span>AR</span>
-                            <span>EN</span>
+                            <Link href={pathname} locale="fr" className={cn(locale === 'fr' ? "text-secondary underline decoration-secondary/30 underline-offset-8" : "")}>FR</Link>
+                            <Link href={pathname} locale="ar" className={cn(locale === 'ar' ? "text-secondary underline decoration-secondary/30 underline-offset-8" : "")}>AR</Link>
+                            <Link href={pathname} locale="en" className={cn(locale === 'en' ? "text-secondary underline decoration-secondary/30 underline-offset-8" : "")}>EN</Link>
                         </div>
                     </div>
                 </div>

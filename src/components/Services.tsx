@@ -4,12 +4,15 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import ScrollReveal from "./ScrollReveal";
 import SplitTextReveal from "./SplitTextReveal";
 import { services } from "@/data/services";
+import { useTranslations } from "next-intl";
 
 const Services = () => {
+    const t = useTranslations('Services');
+
     return (
         <section id="services" className="py-32 bg-white relative overflow-hidden">
             {/* Decorative background elements */}
@@ -44,18 +47,18 @@ const Services = () => {
                         className="text-secondary font-bold uppercase tracking-[0.25em] text-sm mb-6 block"
                         type="chars"
                     >
-                        Nos Domaines d&apos;Expertise
+                        {t('title')}
                     </SplitTextReveal>
                     <SplitTextReveal
                         className="text-5xl md:text-7xl font-extrabold text-primary mb-10 leading-tight tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/80 to-secondary"
                         type="words"
                         delay={0.2}
                     >
-                        Solutions Complètes pour Entrepreneurs
+                        {t('subtitle')}
                     </SplitTextReveal>
                     <ScrollReveal delay={0.4}>
                         <p className="text-gray-500 text-xl font-light leading-relaxed max-w-2xl mx-auto">
-                            Chez TAW 10, nous propulsons vos ambitions avec des solutions sur-mesure et une expertise reconnue au cœur de Marrakech.
+                            {t('description')}
                         </p>
                     </ScrollReveal>
                 </div>
@@ -74,16 +77,16 @@ const Services = () => {
                                     {React.cloneElement(service.icon as React.ReactElement<any>, { size: 40 })}
                                 </div>
                                 <h3 className="text-2xl font-bold text-primary mb-6 group-hover:text-secondary transition-colors duration-500">
-                                    {service.title}
+                                    {t(`items.${service.slug}.title`)}
                                 </h3>
                                 <p className="text-gray-500 mb-12 leading-relaxed font-light text-lg">
-                                    {service.text}
+                                    {t(`items.${service.slug}.text`)}
                                 </p>
                                 <Link
                                     href={`/services/${service.slug}`}
                                     className="mt-auto flex items-center gap-3 text-primary font-bold group-hover:gap-5 transition-all duration-500 relative overflow-hidden"
                                 >
-                                    <span className="relative z-10">En savoir plus</span>
+                                    <span className="relative z-10">{t('learnMore')}</span>
                                     <ArrowRight size={20} className="text-secondary transition-transform duration-500 group-hover:translate-x-1" />
                                     <div className="absolute bottom-0 left-0 w-full h-[2px] bg-secondary/20 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
                                 </Link>

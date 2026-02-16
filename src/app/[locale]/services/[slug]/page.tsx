@@ -7,23 +7,29 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import ScrollReveal from "@/components/ScrollReveal";
 import SplitTextReveal from "@/components/SplitTextReveal";
+import { useTranslations } from "next-intl";
+import { cn } from "@/lib/utils";
 
 export default function ServiceDetailPage() {
     const params = useParams();
     const router = useRouter();
     const service = services.find((s) => s.slug === params.slug);
+    const t = useTranslations('Services');
+    const tDetail = useTranslations('ServiceDetail');
 
     if (!service) {
         return (
             <div className="flex items-center justify-center min-h-screen">
-                <p>Service non trouvé</p>
-                <Link href="/services">Retour aux services</Link>
+                <p>{tDetail('notFound')}</p>
+                <Link href="/#services">{tDetail('back')}</Link>
             </div>
         );
     }
+
+    const features = t.raw(`items.${service.slug}.features`) as string[];
 
     return (
         <main className="min-h-screen bg-white">
@@ -42,7 +48,7 @@ export default function ServiceDetailPage() {
                         className="inline-flex items-center gap-2 text-white/60 hover:text-secondary transition-colors mb-12 group"
                     >
                         <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
-                        Retour aux services
+                        {tDetail('back')}
                     </Link>
 
                     <div className="max-w-4xl">
@@ -59,7 +65,7 @@ export default function ServiceDetailPage() {
                             className="text-5xl md:text-7xl font-black mb-8 leading-[1.1]"
                             type="words"
                         >
-                            {service.title}
+                            {t(`items.${service.slug}.title`)}
                         </SplitTextReveal>
 
                         <motion.p
@@ -68,7 +74,7 @@ export default function ServiceDetailPage() {
                             transition={{ duration: 0.8, delay: 0.4 }}
                             className="text-xl md:text-2xl text-white/70 font-light leading-relaxed max-w-2xl"
                         >
-                            {service.text}
+                            {t(`items.${service.slug}.text`)}
                         </motion.p>
                     </div>
                 </div>
@@ -82,11 +88,11 @@ export default function ServiceDetailPage() {
                         <ScrollReveal>
                             <div className="space-y-8">
                                 <h2 className="text-3xl font-bold text-primary relative inline-block">
-                                    Aperçu du Service
+                                    {tDetail('overview')}
                                     <span className="absolute -bottom-2 left-0 w-12 h-1 bg-secondary rounded-full" />
                                 </h2>
                                 <p className="text-gray-600 text-lg leading-relaxed">
-                                    {service.fullDescription}
+                                    {t(`items.${service.slug}.fullDescription`)}
                                 </p>
 
                                 <div className="pt-8">
@@ -94,7 +100,7 @@ export default function ServiceDetailPage() {
                                         href="/#contact"
                                         className="bg-primary text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-secondary hover:text-primary transition-all shadow-xl hover:shadow-2xl"
                                     >
-                                        Demander un devis
+                                        {tDetail('quote')}
                                     </Link>
                                 </div>
                             </div>
@@ -103,9 +109,9 @@ export default function ServiceDetailPage() {
                         {/* Features List */}
                         <ScrollReveal delay={0.2}>
                             <div className="bg-gray-50/50 p-12 rounded-[2.5rem] border border-gray-100">
-                                <h3 className="text-2xl font-bold text-primary mb-10">Ce que nous offrons :</h3>
+                                <h3 className="text-2xl font-bold text-primary mb-10">{tDetail('whatWeOffer')}</h3>
                                 <ul className="space-y-6">
-                                    {service.features.map((feature, i) => (
+                                    {features.map((feature, i) => (
                                         <motion.li
                                             key={i}
                                             initial={{ opacity: 0, x: 20 }}
@@ -130,6 +136,3 @@ export default function ServiceDetailPage() {
         </main>
     );
 }
-
-// Helper to keep imports clean
-import { cn } from "@/lib/utils";

@@ -6,8 +6,10 @@ import { Phone, ArrowRight } from "lucide-react";
 import { gsap, useGSAP } from "@/lib/gsap-animations";
 import MagneticButton from "./MagneticButton";
 import SplitTextReveal from "./SplitTextReveal";
+import { useTranslations } from "next-intl";
 
 const Hero = () => {
+    const t = useTranslations('Hero');
     const containerRef = useRef<HTMLDivElement>(null);
     const imageRef = useRef<HTMLDivElement>(null);
     const textRef = useRef<HTMLParagraphElement>(null);
@@ -80,14 +82,14 @@ const Hero = () => {
                         type="chars"
                         delay={0.1}
                     >
-                        Parmi les meilleures sociétés de domiciliation et création sur internet ou dans tous les centres TAW10 au Maroc
+                        {t('title')}
                     </SplitTextReveal>
 
                     <p
                         ref={textRef}
                         className="text-white/70 text-xl md:text-2xl mb-14 max-w-2xl leading-relaxed font-light mx-auto"
                     >
-                        TAW 10 n&apos;est pas qu&apos;une simple adresse. C&apos;est l&apos;élan qui propulse votre entreprise vers de nouveaux sommets. Agréée par l&apos;État Marocain, notre mission est de transformer chaque étape de votre parcours entrepreneurial en une expérience simple, fluide, et surtout, adaptée à votre vision unique.
+                        {t('subtitle')}
                     </p>
 
                     <div
@@ -99,7 +101,7 @@ const Hero = () => {
                                 href="#contact"
                                 className="bg-secondary text-primary px-12 py-6 rounded-full font-bold text-xl flex items-center gap-4 hover:bg-white transition-all shadow-2xl group overflow-hidden relative"
                             >
-                                <span className="relative z-10">Commencer Maintenant</span>
+                                <span className="relative z-10">{t('cta')}</span>
                                 <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform relative z-10" />
                             </a>
                         </MagneticButton>

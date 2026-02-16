@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import SplitType from "split-type";
 import { gsap, useGSAP } from "@/lib/gsap-animations";
+import { useLocale } from "next-intl";
 
 interface SplitTextRevealProps {
     children: string;
@@ -20,12 +21,16 @@ export default function SplitTextReveal({
     once = true,
 }: SplitTextRevealProps) {
     const textRef = useRef<HTMLHeadingElement>(null);
+    const locale = useLocale();
+
+    // Force "words" or "lines" for Arabic to avoid breaking ligatures with "chars"
+    const effectiveType = (locale === 'ar' && type === 'chars') ? 'words' : type;
 
     useGSAP(() => {
         if (!textRef.current) return;
 
-        const text = new SplitType(textRef.current, { types: type });
-        const targets = type === "chars" ? text.chars : type === "words" ? text.words : text.lines;
+        const text = new SplitType(textRef.current, { types: effectiveType });
+        const targets = effectiveType === "chars" ? text.chars : effectiveType === "words" ? text.words : text.lines;
 
         gsap.fromTo(
             targets,
@@ -52,7 +57,7 @@ export default function SplitTextReveal({
         );
 
         return () => text.revert();
-    }, [children, type, delay, once]);
+    }, [children, effectiveType, delay, once]); // Use effectiveType in dependency array
 
     return (
         <div className="overflow-hidden">

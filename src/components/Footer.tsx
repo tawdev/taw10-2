@@ -2,10 +2,13 @@
 
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const Footer = () => {
+    const t = useTranslations('Footer');
+
     return (
         <footer className="bg-primary text-white pt-24 pb-12">
             <div className="container mx-auto px-4">
@@ -21,7 +24,7 @@ const Footer = () => {
                             />
                         </Link>
                         <p className="text-white/60 leading-relaxed">
-                            Votre partenaire de confiance pour la création d&apos;entreprise et la domiciliation au Maroc.
+                            {t('description')}
                         </p>
                         <div className="flex gap-4">
                             {[Facebook, Instagram, Twitter, Linkedin].map((Icon, i) => (
@@ -39,15 +42,15 @@ const Footer = () => {
                     {/* Quick Links */}
                     <div>
                         <h4 className="text-xl font-bold mb-8 relative inline-block">
-                            Liens Rapides
+                            {t('quickLinks')}
                             <span className="absolute -bottom-2 left-0 w-12 h-1 bg-secondary rounded-full" />
                         </h4>
                         <ul className="space-y-4">
                             {[
-                                { name: "Home", href: "#" },
-                                { name: "Nos Services", href: "#services" },
-                                { name: "Nos Tarifs", href: "#tarifs" },
-                                { name: "Contact", href: "#contact" }
+                                { name: t('links.home'), href: "/" },
+                                { name: t('links.services'), href: "/#services" },
+                                { name: t('links.pricing'), href: "/#tarifs" },
+                                { name: t('links.contact'), href: "/#contact" }
                             ].map((link) => (
                                 <li key={link.name}>
                                     <Link
@@ -64,7 +67,7 @@ const Footer = () => {
                     {/* Contact Detail Section */}
                     <div>
                         <h4 className="text-xl font-bold mb-8 relative inline-block">
-                            Contact
+                            {t('contact')}
                             <span className="absolute -bottom-2 left-0 w-12 h-1 bg-secondary rounded-full" />
                         </h4>
                         <ul className="space-y-6 text-white/60">
@@ -85,7 +88,7 @@ const Footer = () => {
                     {/* Address Column */}
                     <div>
                         <h4 className="text-xl font-bold mb-8 relative inline-block">
-                            Address
+                            {t('address')}
                             <span className="absolute -bottom-2 left-0 w-12 h-1 bg-secondary rounded-full" />
                         </h4>
                         <ul className="space-y-6">
@@ -101,7 +104,7 @@ const Footer = () => {
                 </div>
 
                 <div className="pt-12 border-t border-white/5 text-center text-white/30 text-sm">
-                    <p>&copy; {new Date().getFullYear()} C-Digital. Tous droits réservés.</p>
+                    <p>&copy; {new Date().getFullYear()} C-Digital. {t('rights')}</p>
                 </div>
             </div>
         </footer>

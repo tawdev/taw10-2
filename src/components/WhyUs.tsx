@@ -6,8 +6,10 @@ import { CheckCircle2, Quote, Globe } from "lucide-react";
 import { gsap, useGSAP } from "@/lib/gsap-animations";
 import ScrollReveal from "./ScrollReveal";
 import SplitTextReveal from "./SplitTextReveal";
+import { useTranslations } from "next-intl";
 
 const WhyUs = () => {
+    const t = useTranslations('WhyUs');
     const containerRef = useRef<HTMLDivElement>(null);
     const image1Ref = useRef<HTMLDivElement>(null);
     const image2Ref = useRef<HTMLDivElement>(null);
@@ -37,10 +39,10 @@ const WhyUs = () => {
     }, { scope: containerRef });
 
     const benefits = [
-        "Instantanéité & Personnalisation",
-        "Solutions de Croissance Avancées",
-        "Expertise Administrative Complète",
-        "Accompagnement de Bout en Bout",
+        t('benefits.0'),
+        t('benefits.1'),
+        t('benefits.2'),
+        t('benefits.3'),
     ];
 
     return (
@@ -54,7 +56,7 @@ const WhyUs = () => {
                                 <div ref={image1Ref}>
                                     <Image
                                         src="/images/b_Image_de_fond_modern.png"
-                                        alt="Bureau Moderne"
+                                        alt={t('title')}
                                         width={600}
                                         height={800}
                                         className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -66,7 +68,7 @@ const WhyUs = () => {
                             {/* Stats Card Overlay */}
                             <div ref={image2Ref} className="absolute -bottom-16 -right-16 bg-secondary p-10 rounded-[2.5rem] shadow-2xl z-20 text-primary hidden md:block border-8 border-white">
                                 <span className="text-5xl font-extrabold block mb-2 tracking-tighter">2,250+</span>
-                                <span className="text-sm font-bold uppercase tracking-widest opacity-80">Clients de Confiance</span>
+                                <span className="text-sm font-bold uppercase tracking-widest opacity-80">{t('stats.clients')}</span>
                                 <Globe className="absolute top-4 right-4 text-primary/10 w-12 h-12" />
                             </div>
                         </ScrollReveal>
@@ -82,20 +84,20 @@ const WhyUs = () => {
                                 className="text-secondary font-bold uppercase tracking-[0.2em] text-sm mb-6 block"
                                 type="chars"
                             >
-                                Pourquoi TAW 10 ?
+                                {t('title')}
                             </SplitTextReveal>
                             <SplitTextReveal
                                 className="text-5xl md:text-6xl font-bold text-primary mb-10 leading-[1.1]"
                                 type="words"
                                 delay={0.2}
                             >
-                                Votre Succès est Notre Seule Mission
+                                {t('subtitle')}
                             </SplitTextReveal>
                         </div>
 
                         <ScrollReveal delay={0.4}>
                             <p className="text-gray-500 text-xl mb-12 leading-relaxed font-light">
-                                Bien plus qu’une simple domiciliation, TAW 10 est le catalyseur de votre réussite entrepreneuriale au Maroc. Agréée par l’État, notre centre vous offre un environnement d&apos;exception.
+                                {t('description')}
                             </p>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
@@ -112,11 +114,11 @@ const WhyUs = () => {
                             <div className="p-10 bg-gray-50 rounded-[2.5rem] border-l-8 border-secondary relative overflow-hidden group">
                                 <Quote className="absolute top-6 right-8 text-secondary/10 w-24 h-24 -z-0" />
                                 <p className="text-primary/80 italic text-xl relative z-10 leading-relaxed">
-                                    &ldquo;Nous ne nous contentons pas de vous donner une adresse ; nous vous offrons le prestige et l&apos;élan nécessaires pour briller.&rdquo;
+                                    &ldquo;{t('quote')}&rdquo;
                                 </p>
                                 <div className="mt-6 flex items-center gap-4">
                                     <div className="w-12 h-1 bg-secondary rounded-full" />
-                                    <span className="font-bold text-primary uppercase tracking-widest text-sm">DIRECTION TAW 10</span>
+                                    <span className="font-bold text-primary uppercase tracking-widest text-sm">{t('direction')}</span>
                                 </div>
                             </div>
                         </ScrollReveal>
