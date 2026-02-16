@@ -1,0 +1,32 @@
+﻿
+> taw10-next@0.1.0 lint
+> eslint
+
+
+C:\Users\pc\Desktop\taw10-next\legacy\assets\js\main.js
+  502:31  warning  'index' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\pc\Desktop\taw10-next\src\components\Hero.tsx
+  83:26  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\pc\Desktop\taw10-next\src\components\Navbar.tsx
+  6:19  warning  'Globe' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\pc\Desktop\taw10-next\src\components\Pricing.tsx
+  81:115  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\pc\Desktop\taw10-next\src\components\Services.tsx
+  61:39  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\pc\Desktop\taw10-next\src\components\WhyUs.tsx
+  6:16  warning  'ScrollTrigger' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\pc\Desktop\taw10-next\src\lib\gsap-animations.ts
+  13:29  error    Unexpected any. Specify a different type                                                                                                                                    @typescript-eslint/no-explicit-any
+  14:20  error    Unexpected any. Specify a different type                                                                                                                                    @typescript-eslint/no-explicit-any
+  23:14  error    Unexpected any. Specify a different type                                                                                                                                    @typescript-eslint/no-explicit-any
+  31:8   warning  React Hook useLayoutEffect was passed a dependency list that is not an array literal. This means we can't statically verify whether you've passed the correct dependencies  react-hooks/exhaustive-deps
+  31:8   warning  React Hook useLayoutEffect has missing dependencies: 'callback' and 'scope'. Either include them or remove the dependency array                                             react-hooks/exhaustive-deps
+
+Ô£û 11 problems (6 errors, 5 warnings)
+

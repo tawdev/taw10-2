@@ -1,0 +1,136 @@
+"use client";
+
+import React, { useRef } from "react";
+import Image from "next/image";
+import { Phone, ArrowRight } from "lucide-react";
+import { gsap, useGSAP } from "@/lib/gsap-animations";
+import MagneticButton from "./MagneticButton";
+import SplitTextReveal from "./SplitTextReveal";
+
+const Hero = () => {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const imageRef = useRef<HTMLDivElement>(null);
+    const textRef = useRef<HTMLParagraphElement>(null);
+    const actionsRef = useRef<HTMLDivElement>(null);
+    const overlayRef = useRef<HTMLDivElement>(null);
+
+    useGSAP(() => {
+        const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
+
+        // Initial state for non-split elements
+        gsap.set([textRef.current, actionsRef.current], {
+            opacity: 0,
+            y: 30
+        });
+        gsap.set(imageRef.current, { scale: 1.2, filter: "blur(10px)" });
+        gsap.set(overlayRef.current, { opacity: 0 });
+
+        // Entrance Animation Sequence
+        tl.to(overlayRef.current, { opacity: 1, duration: 1.5 })
+            .to(imageRef.current, { scale: 1, filter: "blur(0px)", duration: 2 }, 0)
+            .to(textRef.current, { opacity: 1, y: 0, duration: 1 }, 1)
+            .to(actionsRef.current, { opacity: 1, y: 0, duration: 1 }, 1.2);
+
+        // Parallax Scroll Effect
+        gsap.to(imageRef.current, {
+            yPercent: 20,
+            ease: "none",
+            scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top top",
+                end: "bottom top",
+                scrub: true,
+            },
+        });
+
+        // Content subtle float up on scroll
+        gsap.to([textRef.current, actionsRef.current], {
+            y: -30,
+            stagger: 0.05,
+            ease: "none",
+            scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top top",
+                end: "bottom top",
+                scrub: true,
+            },
+        });
+    }, { scope: containerRef });
+
+    return (
+        <section ref={containerRef} className="relative h-screen min-h-[750px] w-full overflow-hidden flex items-center pt-20 md:pt-30">
+            {/* Background Layer */}
+            <div className="absolute inset-0 z-0">
+                <div ref={imageRef} className="relative h-[120%] w-full -top-[10%]">
+                    <Image
+                        src="/images/b_Image_de_fond_profes.jpeg"
+                        alt="Hero Background"
+                        fill
+                        className="object-cover object-center"
+                        priority
+                    />
+                </div>
+                <div ref={overlayRef} className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-transparent z-10" />
+            </div>
+
+            <div className="container mx-auto px-4 relative z-20">
+                <div className="max-w-4xl mx-auto text-center">
+                    <SplitTextReveal
+                        className="text-4xl md:text-5xl font-extrabold text-white leading-[1.1] mb-10 tracking-tighter"
+                        type="chars"
+                        delay={0.1}
+                    >
+                        Parmi les meilleures sociétés de domiciliation et création sur internet ou dans tous les centres TAW10 au Maroc
+                    </SplitTextReveal>
+
+                    <p
+                        ref={textRef}
+                        className="text-white/70 text-xl md:text-2xl mb-14 max-w-2xl leading-relaxed font-light mx-auto"
+                    >
+                        TAW 10 n&apos;est pas qu&apos;une simple adresse. C&apos;est l&apos;élan qui propulse votre entreprise vers de nouveaux sommets. Agréée par l&apos;État Marocain, notre mission est de transformer chaque étape de votre parcours entrepreneurial en une expérience simple, fluide, et surtout, adaptée à votre vision unique.
+                    </p>
+
+                    <div
+                        ref={actionsRef}
+                        className="flex flex-wrap gap-10 items-center justify-center"
+                    >
+                        <MagneticButton>
+                            <a
+                                href="#contact"
+                                className="bg-secondary text-primary px-12 py-6 rounded-full font-bold text-xl flex items-center gap-4 hover:bg-white transition-all shadow-2xl group overflow-hidden relative"
+                            >
+                                <span className="relative z-10">Commencer Maintenant</span>
+                                <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform relative z-10" />
+                            </a>
+                        </MagneticButton>
+
+                        <div className="flex flex-col gap-2 group cursor-pointer">
+                            <a
+                                href="tel:+212524308038"
+                                className="text-white group-hover:text-secondary transition-colors font-bold text-2xl flex items-center gap-4 decoration-secondary/30 underline-offset-8 underline"
+                            >
+                                <div className="bg-white/10 p-2 rounded-full group-hover:bg-secondary group-hover:text-primary transition-all">
+                                    <Phone size={22} />
+                                </div>
+                                +212 52430-8038
+                            </a>
+                            <span className="text-white/40 text-xs ml-14 italic tracking-widest uppercase">Consultation 24/7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Decorative Elements */}
+            <div className="absolute top-1/2 -right-48 w-96 h-96 bg-secondary/10 rounded-full blur-[150px] z-10 animate-pulse" />
+            <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-blue-500/10 rounded-full blur-[150px] z-10" />
+
+            {/* Scroll Indicator */}
+            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-4 opacity-40">
+                <div className="w-[1px] h-20 bg-gradient-to-b from-white to-transparent" />
+                <span className="text-white text-[10px] uppercase tracking-[0.5em] font-bold vertical-text">Scroll</span>
+            </div>
+        </section>
+    );
+};
+
+export default Hero;
