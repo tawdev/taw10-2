@@ -1,50 +1,13 @@
 "use client";
 
 import React from "react";
-import { Home, Handshake, Building, Stethoscope, Users, Car, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import ScrollReveal from "./ScrollReveal";
 import SplitTextReveal from "./SplitTextReveal";
-
-const services = [
-    {
-        title: "Domiciliation Premium",
-        text: "Offrez à votre entreprise l'élégance d'une adresse dans l'un des quartiers les plus convoités de Marrakech.",
-        icon: <Home className="w-10 h-10" />,
-        color: "bg-blue-50 text-blue-600 border-blue-100",
-    },
-    {
-        title: "Création d'Entreprise",
-        text: "Faites naître votre projet en un clic. Nous prenons en charge toutes les formalités pour vous.",
-        icon: <Handshake className="w-10 h-10" />,
-        color: "bg-amber-50 text-amber-600 border-amber-100",
-    },
-    {
-        title: "Secrétariat Virtuel",
-        text: "Gestion et numérisation quotidienne de votre courrier, fax et colis. Votre réalité quotidienne.",
-        icon: <Building className="w-10 h-10" />,
-        color: "bg-green-50 text-green-600 border-green-100",
-    },
-    {
-        title: "Support Juridique",
-        text: "Modifications de statuts, transferts de siège, cessions de parts – chaque démarche est gérée par nos experts.",
-        icon: <Stethoscope className="w-10 h-10" />,
-        color: "bg-red-50 text-red-600 border-red-100",
-    },
-    {
-        title: "Support Administratif",
-        text: "Libérez-vous des tâches administratives chronophages grâce à notre service de support personnalisé.",
-        icon: <Users className="w-10 h-10" />,
-        color: "bg-purple-50 text-purple-600 border-purple-100",
-    },
-    {
-        title: "Conseil Stratégique",
-        text: "Nous vous accompagnons dans la croissance de votre entreprise grâce à notre conseil en développement.",
-        icon: <Car className="w-10 h-10" />,
-        color: "bg-indigo-50 text-indigo-600 border-indigo-100",
-    },
-];
+import { services } from "@/data/services";
 
 const Services = () => {
     return (
@@ -116,14 +79,14 @@ const Services = () => {
                                 <p className="text-gray-500 mb-12 leading-relaxed font-light text-lg">
                                     {service.text}
                                 </p>
-                                <a
-                                    href="#contact"
+                                <Link
+                                    href={`/services/${service.slug}`}
                                     className="mt-auto flex items-center gap-3 text-primary font-bold group-hover:gap-5 transition-all duration-500 relative overflow-hidden"
                                 >
                                     <span className="relative z-10">En savoir plus</span>
                                     <ArrowRight size={20} className="text-secondary transition-transform duration-500 group-hover:translate-x-1" />
                                     <div className="absolute bottom-0 left-0 w-full h-[2px] bg-secondary/20 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-                                </a>
+                                </Link>
                             </motion.div>
                         </ScrollReveal>
                     ))}

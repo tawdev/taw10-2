@@ -12,19 +12,19 @@ const teamMembers = [
         name: "Hicham MHAMEDI",
         role: "CEO",
         description: "PDG de TAW 10, expert en création d'entreprise et domiciliation au Maroc.",
-        image: "/images/team/hicham.jpg", // Placeholder until verified
+        image: "/images/team/hicham.jpeg",
     },
     {
         name: "Salma AAOUAD",
         role: "Sales Department",
         description: "Spécialiste en vente et relation client, dédiée à votre satisfaction.",
-        image: "/images/team/salma.jpg", // Placeholder until verified
+        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800",
     },
     {
         name: "AFAFE KHLIFAL",
         role: "Office Manager",
         description: "Gestionnaire de bureau expérimentée, garantissant le bon fonctionnement de nos services.",
-        image: "/images/team/afafe.jpg", // Placeholder until verified
+        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800",
     },
 ];
 
@@ -59,13 +59,16 @@ const Team = () => {
                     {teamMembers.map((member, index) => (
                         <ScrollReveal key={index} delay={index * 0.1}>
                             <div className="group relative">
-                                <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden mb-8 shadow-2xl">
-                                    {/* Using a placeholder-like styling since actual images might not exist yet */}
-                                    <div className="absolute inset-0 bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-700">
-                                        <div className="text-primary/20 font-bold text-4xl uppercase tracking-tighter transform -rotate-12">
-                                            {member.name.split(' ')[0]}
-                                        </div>
-                                    </div>
+                                <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden mb-8 shadow-2xl bg-gray-100">
+                                    <Image
+                                        src={member.image}
+                                        alt={member.name}
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                        priority={index === 0}
+                                        unoptimized={true}
+                                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                    />
                                     <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                                     {/* Social links hover card */}

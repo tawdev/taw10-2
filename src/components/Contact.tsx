@@ -1,13 +1,52 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { Mail, Phone, MapPin, Send, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
+import { useSearchParams } from "next/navigation";
 import ScrollReveal from "./ScrollReveal";
 import MagneticButton from "./MagneticButton";
 import SplitTextReveal from "./SplitTextReveal";
 
-const Contact = () => {
+const ContactContent = () => {
+    const searchParams = useSearchParams();
+    const packParam = searchParams.get("pack");
+    const [selectedPack, setSelectedPack] = useState("");
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        message: ""
+    });
+
+    useEffect(() => {
+        if (packParam) {
+            const packs = ["INTILAQA", "INTILAQA PRO", "INTILAQA PLUS", "INTILAQA PREMIUM"];
+            const matchedPack = packs.find(p => p.toLowerCase() === packParam.toLowerCase());
+            if (matchedPack) {
+                setSelectedPack(`Pack ${matchedPack}`);
+            }
+        }
+    }, [packParam]);
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+
+        const whatsappNumber = "+212607790956";
+        const text = `*Nouveau Message de TAW 10*%0A%0A` +
+            `*Nom:* ${formData.name}%0A` +
+            `*Email:* ${formData.email}%0A` +
+            `*Téléphone:* ${formData.phone}%0A` +
+            `*Service/Pack:* ${selectedPack || "Non spécifié"}%0A` +
+            `*Message:* ${formData.message}`;
+
+        window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank");
+    };
     return (
         <section id="contact" className="py-32 bg-white relative overflow-hidden">
             {/* Cinematic Background Glows */}
@@ -108,13 +147,17 @@ const Contact = () => {
                                     className="absolute -top-32 -right-32 w-64 h-64 bg-secondary/5 rounded-full blur-[60px] -z-0"
                                 />
 
-                                <form className="space-y-6 relative z-10" onSubmit={(e) => e.preventDefault()}>
+                                <form className="space-y-6 relative z-10" onSubmit={handleSubmit}>
                                     <div className="space-y-2">
                                         <label className="text-xs font-bold text-primary uppercase tracking-widest ml-1">Nom Complet</label>
                                         <input
                                             type="text"
+                                            name="name"
+                                            value={formData.name}
+                                            onChange={handleChange}
+                                            required
                                             placeholder="Votre nom"
-                                            className="w-full px-7 py-4 rounded-2xl bg-blue-50/30 border-gray-100 focus:bg-white focus:border-secondary focus:ring-4 focus:ring-secondary/5 transition-all outline-none font-medium text-sm shadow-sm"
+                                            className="w-full px-7 py-4 rounded-2xl bg-blue-50/30 border-gray-100 focus:bg-white focus:border-secondary focus:ring-4 focus:ring-secondary/5 transition-all outline-none font-medium text-sm shadow-sm text-primary"
                                         />
                                     </div>
 
@@ -123,16 +166,24 @@ const Contact = () => {
                                             <label className="text-xs font-bold text-primary uppercase tracking-widest ml-1">Address Email</label>
                                             <input
                                                 type="email"
+                                                name="email"
+                                                value={formData.email}
+                                                onChange={handleChange}
+                                                required
                                                 placeholder="email@example.com"
-                                                className="w-full px-7 py-4 rounded-2xl bg-blue-50/30 border-gray-100 focus:bg-white focus:border-secondary focus:ring-4 focus:ring-secondary/5 transition-all outline-none font-medium text-sm shadow-sm"
+                                                className="w-full px-7 py-4 rounded-2xl bg-blue-50/30 border-gray-100 focus:bg-white focus:border-secondary focus:ring-4 focus:ring-secondary/5 transition-all outline-none font-medium text-sm shadow-sm text-primary"
                                             />
                                         </div>
                                         <div className="space-y-2">
                                             <label className="text-xs font-bold text-primary uppercase tracking-widest ml-1">Telephone</label>
                                             <input
                                                 type="tel"
+                                                name="phone"
+                                                value={formData.phone}
+                                                onChange={handleChange}
+                                                required
                                                 placeholder="06 00 00 00 00"
-                                                className="w-full px-7 py-4 rounded-2xl bg-blue-50/30 border-gray-100 focus:bg-white focus:border-secondary focus:ring-4 focus:ring-secondary/5 transition-all outline-none font-medium text-sm shadow-sm"
+                                                className="w-full px-7 py-4 rounded-2xl bg-blue-50/30 border-gray-100 focus:bg-white focus:border-secondary focus:ring-4 focus:ring-secondary/5 transition-all outline-none font-medium text-sm shadow-sm text-primary"
                                             />
                                         </div>
                                     </div>
@@ -141,19 +192,17 @@ const Contact = () => {
                                         <label className="text-xs font-bold text-primary uppercase tracking-widest ml-1">Sélectionnez un service ou un pack</label>
                                         <div className="relative">
                                             <select
-                                                defaultValue=""
-                                                className="w-full px-7 py-4 rounded-2xl bg-gray-50/50 border-2 border-transparent focus:bg-white focus:border-secondary transition-all outline-none appearance-none font-medium text-sm cursor-pointer"
+                                                value={selectedPack}
+                                                onChange={(e) => setSelectedPack(e.target.value)}
+                                                className="w-full px-7 py-4 rounded-2xl bg-blue-50/30 border-gray-100 focus:bg-white focus:border-secondary focus:ring-4 focus:ring-secondary/5 transition-all outline-none appearance-none font-medium text-sm cursor-pointer text-primary shadow-sm"
                                             >
-                                                <option value="" disabled>Choisissez un service ou un pack</option>
-                                                <option>Pack INTILAQA</option>
-                                                <option>Pack INTILAQA PRO</option>
-                                                <option>Pack INTILAQA PLUS</option>
-                                                <option>Pack INTILAQA PREMIUM</option>
-                                                <option>Domiciliation Premium</option>
-                                                <option>Création d&apos;Entreprise</option>
-                                                <option>Secrétariat Virtuel</option>
+                                                <option value="" disabled className="text-gray-400">Choisissez un service ou un pack</option>
+                                                <option value="Pack INTILAQA" className="text-primary bg-white">Pack INTILAQA</option>
+                                                <option value="Pack INTILAQA PRO" className="text-primary bg-white">Pack INTILAQA PRO</option>
+                                                <option value="Pack INTILAQA PLUS" className="text-primary bg-white">Pack INTILAQA PLUS</option>
+                                                <option value="Pack INTILAQA PREMIUM" className="text-primary bg-white">Pack INTILAQA PREMIUM</option>
                                             </select>
-                                            <ChevronDown className="absolute right-6 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" size={18} />
+                                            <ChevronDown className="absolute right-6 top-1/2 -translate-y-1/2 text-primary pointer-events-none opacity-50" size={18} />
                                         </div>
                                     </div>
 
@@ -161,8 +210,12 @@ const Contact = () => {
                                         <label className="text-xs font-bold text-primary uppercase tracking-widest ml-1">Message</label>
                                         <textarea
                                             rows={3}
+                                            name="message"
+                                            value={formData.message}
+                                            onChange={handleChange}
+                                            required
                                             placeholder="Comment pouvons-nous vous accompagner ?"
-                                            className="w-full px-7 py-4 rounded-2xl bg-gray-50/50 border-2 border-transparent focus:bg-white focus:border-secondary transition-all outline-none resize-none font-medium text-sm"
+                                            className="w-full px-7 py-4 rounded-2xl bg-blue-50/30 border-gray-100 focus:bg-white focus:border-secondary focus:ring-4 focus:ring-secondary/5 transition-all outline-none resize-none font-medium text-sm text-primary shadow-sm"
                                         ></textarea>
                                     </div>
 
@@ -182,6 +235,14 @@ const Contact = () => {
                 </div>
             </div>
         </section>
+    );
+};
+
+const Contact = () => {
+    return (
+        <Suspense fallback={<div className="h-[600px] flex items-center justify-center bg-white rounded-[3rem] shadow-sm border border-gray-100/50"><div className="w-10 h-10 border-4 border-secondary border-t-transparent rounded-full animate-spin"></div></div>}>
+            <ContactContent />
+        </Suspense>
     );
 };
 

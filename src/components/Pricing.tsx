@@ -3,6 +3,7 @@
 import React from "react";
 import { Check, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 import ScrollReveal from "./ScrollReveal";
 import SplitTextReveal from "./SplitTextReveal";
 
@@ -167,8 +168,8 @@ const Pricing = () => {
                                     ))}
                                 </ul>
 
-                                <a
-                                    href="#contact"
+                                <Link
+                                    href={`/?pack=${plan.name}#contact`}
                                     className={cn(
                                         "w-full block text-center py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-xl",
                                         plan.popular
@@ -177,7 +178,7 @@ const Pricing = () => {
                                     )}
                                 >
                                     COMMENCER
-                                </a>
+                                </Link>
                             </div>
                         </ScrollReveal>
                     ))}

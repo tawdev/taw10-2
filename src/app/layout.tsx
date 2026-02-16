@@ -21,6 +21,8 @@ export const metadata: Metadata = {
 
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
+import Preloader from "@/components/Preloader";
+import WhatsappContact from "@/components/WhatsappContact";
 
 export default function RootLayout({
   children,
@@ -32,9 +34,13 @@ export default function RootLayout({
       <body
         className={`${outfit.variable} ${cairo.variable} antialiased selection:bg-secondary/30`}
       >
+        <Preloader />
         <SmoothScroll>
           <CustomCursor />
-          {children}
+          <div className="fouc-guard opacity-0">
+            {children}
+          </div>
+          <WhatsappContact />
         </SmoothScroll>
       </body>
     </html>

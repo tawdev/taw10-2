@@ -5,7 +5,7 @@
   --color-primary-light: #2c5282;
   --color-secondary: #d4af37;
   --color-accent: #f6ad55;
-  
+
   --font-outfit: "Outfit", sans-serif;
   --font-cairo: "Cairo", sans-serif;
 }
@@ -31,6 +31,11 @@ body {
   scroll-behavior: smooth;
 }
 
+/* FOUC (Flash of Unstyled Content) Prevention */
+.fouc-guard {
+  opacity: 0;
+}
+
 .font-arabic {
   font-family: var(--font-cairo);
 }
@@ -40,7 +45,7 @@ body {
   .glass {
     @apply bg-white/80 backdrop-blur-md border border-white/20;
   }
-  
+
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-light;
   }
