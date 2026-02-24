@@ -22,13 +22,13 @@ const Team = () => {
             name: "Salma AAOUAD",
             role: t('members.salma.role'),
             description: t('members.salma.description'),
-            image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800",
+            image: "/salma.jpeg",
         },
         {
             name: "AFAFE KHLIFAL",
             role: t('members.afafe.role'),
             description: t('members.afafe.description'),
-            image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800",
+            image: "/afafe.jpeg",
         },
     ];
 

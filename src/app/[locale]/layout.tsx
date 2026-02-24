@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import { Outfit, Cairo } from "next/font/google";
+import { Montserrat, Cairo } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import "../globals.css";
 
-const outfit = Outfit({
-    variable: "--font-outfit",
+const montserrat = Montserrat({
+    variable: "--font-montserrat",
     subsets: ["latin"],
     display: "swap",
+    weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
 const cairo = Cairo({
@@ -49,7 +50,7 @@ export default async function LocaleLayout({
     return (
         <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} className="scroll-smooth">
             <body
-                className={`${outfit.variable} ${cairo.variable} antialiased selection:bg-secondary/30`}
+                className={`${montserrat.variable} ${cairo.variable} antialiased selection:bg-secondary/30`}
             >
                 <NextIntlClientProvider messages={messages}>
                     <Preloader />

@@ -69,7 +69,7 @@ const Preloader = () => {
             <div className="relative z-10 preloader-logo flex flex-col items-center">
                 <div className="relative h-20 w-48 md:h-24 md:w-56 overflow-hidden">
                     <Image
-                        src="/logo.png"
+                        src="/logo.webp"
                         alt="TAW10 Logo"
                         fill
                         sizes="(max-width: 768px) 100vw, 224px"

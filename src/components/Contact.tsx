@@ -108,7 +108,7 @@ const ContactContent = () => {
                                     </div>
                                     <div>
                                         <h4 className="font-bold text-primary mb-2 text-xl tracking-tight">{t('info.email')}</h4>
-                                        <a href="mailto:Contact@taw10.ma" className="text-gray-500 text-lg hover:text-secondary transition-colors underline decoration-secondary/30 underline-offset-4">Contact@taw10.ma</a>
+                                        <a href="mailto:Contact@taw10.com" className="text-gray-500 text-lg hover:text-secondary transition-colors underline decoration-secondary/30 underline-offset-4">Contact@taw10.com</a>
                                     </div>
                                 </div>
 

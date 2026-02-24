@@ -15,9 +15,9 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
                     {/* Brand Column */}
                     <div className="space-y-8">
-                        <Link href="/" className="inline-block relative h-10 w-24 md:h-12 md:w-32 active:scale-95 transition-transform">
+                        <Link href="/" className="inline-block relative h-14 w-36 md:h-16 md:w-44 active:scale-95 transition-transform">
                             <Image
-                                src="/logo.png"
+                                src="/logo.webp"
                                 alt="TAW10 Logo"
                                 fill
                                 className="object-contain"
@@ -73,7 +73,7 @@ const Footer = () => {
                         <ul className="space-y-6 text-white/60">
                             <li className="flex gap-4 items-start">
                                 <Mail className="text-secondary shrink-0" size={20} />
-                                <a href="mailto:Contact@taw10.ma" className="hover:text-secondary transition-colors">Contact@taw10.ma</a>
+                                <a href="mailto:Contact@taw10.com" className="hover:text-secondary transition-colors">Contact@taw10.com</a>
                             </li>
                             <li className="flex gap-4 items-start">
                                 <Phone className="text-secondary shrink-0" size={20} />

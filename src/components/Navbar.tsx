@@ -99,7 +99,7 @@ const Navbar = () => {
                         </span>
                         <span className="flex items-center gap-2">
                             <Mail size={12} className="text-secondary" />
-                            Contact@taw10.ma
+                            Contact@taw10.com
                         </span>
                     </div>
                     <div className="flex items-center gap-8">
@@ -131,9 +131,9 @@ const Navbar = () => {
                 <div className="flex items-center justify-between">
                     {/* Logo Fix: Specific size and priority */}
                     <Link href="/" className="relative flex items-center transition-transform hover:scale-105 active:scale-95">
-                        <div className="relative h-10 w-24 md:h-12 md:w-32">
+                        <div className="relative h-14 w-36 md:h-16 md:w-44">
                             <Image
-                                src="/logo.png"
+                                src="/logo.webp"
                                 alt="TAW10 Logo"
                                 fill
                                 className="object-contain"

@@ -127,10 +127,10 @@ const Pricing = () => {
                         <ScrollReveal key={index} delay={index * 0.1}>
                             <div
                                 className={cn(
-                                    "relative p-8 rounded-[2.5rem] border-2 transition-all duration-500 h-full flex flex-col",
+                                    "relative p-8 rounded-[2.5rem] border-2 transition-all duration-500 h-full flex flex-col group",
                                     plan.popular
                                         ? "border-secondary bg-primary text-white shadow-2xl scale-105 z-10"
-                                        : "border-gray-50 bg-white hover:border-primary/20 hover:shadow-xl"
+                                        : "border-secondary/30 bg-white hover:bg-[#C9A84C] hover:border-secondary hover:shadow-2xl hover:-translate-y-2 cursor-pointer"
                                 )}
                             >
                                 {plan.popular && (
@@ -140,12 +140,12 @@ const Pricing = () => {
                                 )}
 
                                 <div className="mb-8 text-center">
-                                    <h3 className={cn("text-xl font-bold mb-4", plan.popular ? "text-secondary" : "text-primary")}>
+                                    <h3 className={cn("text-xl font-bold mb-4 transition-colors duration-500", plan.popular ? "text-secondary" : "text-primary group-hover:text-white")}>
                                         {t(`plans.${plan.name}`)}
                                     </h3>
                                     <div className="flex items-baseline justify-center gap-1">
-                                        <span className="text-4xl font-extrabold tracking-tighter">{plan.price}</span>
-                                        <span className={cn("text-sm font-medium uppercase", plan.popular ? "text-white/60" : "text-gray-400")}>{t('dhs_ht')}</span>
+                                        <span className={cn("text-4xl font-extrabold tracking-tighter transition-colors duration-500", plan.popular ? "text-white" : "text-primary group-hover:text-white")}>{plan.price}</span>
+                                        <span className={cn("text-sm font-medium uppercase transition-colors duration-500", plan.popular ? "text-white/60" : "text-gray-400 group-hover:text-white/80")}>{t('dhs_ht')}</span>
                                     </div>
                                 </div>
 
@@ -153,17 +153,17 @@ const Pricing = () => {
                                     {plan.features.map((feature, fIndex) => (
                                         <li key={fIndex} className="flex items-start gap-3">
                                             <div className={cn(
-                                                "mt-1 p-0.5 rounded-full shrink-0",
+                                                "mt-1 p-0.5 rounded-full shrink-0 transition-colors duration-500",
                                                 feature.included
-                                                    ? (plan.popular ? "bg-secondary text-primary" : "bg-green-50 text-green-500")
-                                                    : (plan.popular ? "bg-white/10 text-white/30" : "bg-gray-50 text-gray-300")
+                                                    ? (plan.popular ? "bg-secondary text-primary" : "bg-green-50 text-green-500 group-hover:bg-white group-hover:text-[#C9A84C]")
+                                                    : (plan.popular ? "bg-white/10 text-white/30" : "bg-gray-50 text-gray-300 group-hover:bg-white/20 group-hover:text-white/40")
                                             )}>
                                                 {feature.included ? <Check size={12} /> : <X size={12} />}
                                             </div>
                                             <span className={cn(
-                                                "text-xs font-medium leading-tight",
-                                                !feature.included && (plan.popular ? "text-white/30" : "text-gray-400"),
-                                                feature.included && (plan.popular ? "text-white/90" : "text-gray-700")
+                                                "text-xs font-medium leading-tight transition-colors duration-500",
+                                                !feature.included && (plan.popular ? "text-white/30" : "text-gray-400 group-hover:text-white/40"),
+                                                feature.included && (plan.popular ? "text-white/90" : "text-gray-700 group-hover:text-white")
                                             )}>
                                                 {t(`features.${feature.id}`)}
                                             </span>
@@ -174,10 +174,10 @@ const Pricing = () => {
                                 <Link
                                     href={`/?pack=${t(`plans.${plan.name}`)}#contact`}
                                     className={cn(
-                                        "w-full block text-center py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-xl",
+                                        "w-full block text-center py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl",
                                         plan.popular
                                             ? "bg-secondary text-primary hover:bg-white"
-                                            : "bg-cyan-400 text-primary hover:bg-primary hover:text-white"
+                                            : "bg-secondary text-primary hover:bg-primary hover:text-white"
                                     )}
                                 >
                                     {t('start')}

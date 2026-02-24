@@ -6,7 +6,7 @@
   --color-secondary: #d4af37;
   --color-accent: #f6ad55;
 
-  --font-outfit: "Outfit", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
   --font-cairo: "Cairo", sans-serif;
 }
 
@@ -27,7 +27,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-outfit);
+  font-family: var(--font-montserrat);
   scroll-behavior: smooth;
 }
 
