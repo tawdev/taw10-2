@@ -68,7 +68,7 @@ const Testimonials = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {testimonials.map((t, i) => (
-                        <ScrollReveal key={i} delay={i * 0.1}>
+                        <ScrollReveal key={i} delay={i * 0.1} className="h-full">
                             <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-[2.5rem] relative h-full flex flex-col hover:bg-white/10 transition-all duration-500 group border-b-4 border-b-transparent hover:border-b-secondary">
                                 <Quote className="text-secondary w-10 h-10 mb-6 opacity-40 group-hover:opacity-100 transition-opacity" />
                                 <div className="flex gap-1 mb-6 text-secondary">

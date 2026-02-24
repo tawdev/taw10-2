@@ -17,7 +17,7 @@ const Footer = () => {
                     <div className="space-y-8">
                         <Link href="/" className="inline-block relative h-14 w-36 md:h-16 md:w-44 active:scale-95 transition-transform">
                             <Image
-                                src="/logo.webp"
+                                src="/logo.png"
                                 alt="TAW10 Logo"
                                 fill
                                 className="object-contain"

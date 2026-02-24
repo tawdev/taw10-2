@@ -8,13 +8,15 @@ interface ScrollRevealProps {
     width?: "fit-content" | "100%";
     staggerChildren?: boolean;
     delay?: number;
+    className?: string;
 }
 
 const ScrollReveal: React.FC<ScrollRevealProps> = ({
     children,
     width = "100%",
     staggerChildren = false,
-    delay = 0
+    delay = 0,
+    className = ""
 }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, amount: 0.2 });
@@ -34,11 +36,16 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
     };
 
     return (
-        <div ref={ref} style={{ position: "relative", width, overflow: "visible" }}>
+        <div
+            ref={ref}
+            className={className}
+            style={{ position: "relative", width, overflow: "visible" }}
+        >
             <motion.div
                 variants={containerVariants}
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
+                className={className.includes('h-full') ? 'h-full' : ''}
             >
                 {children}
             </motion.div>

@@ -133,7 +133,7 @@ const Navbar = () => {
                     <Link href="/" className="relative flex items-center transition-transform hover:scale-105 active:scale-95">
                         <div className="relative h-14 w-36 md:h-16 md:w-44">
                             <Image
-                                src="/logo.webp"
+                                src="/logo.png"
                                 alt="TAW10 Logo"
                                 fill
                                 className="object-contain"
