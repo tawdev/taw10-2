@@ -13,6 +13,7 @@ const Hero = () => {
     const t = useTranslations('Hero');
     const containerRef = useRef<HTMLDivElement>(null);
     const imageRef = useRef<HTMLDivElement>(null);
+    const titleRef = useRef<HTMLSpanElement>(null);
     const textRef = useRef<HTMLSpanElement>(null);
     const actionsRef = useRef<HTMLDivElement>(null);
     const overlayRef = useRef<HTMLDivElement>(null);
@@ -21,7 +22,7 @@ const Hero = () => {
         const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
 
         // Initial state for non-split elements
-        const animateTargets = [textRef.current, actionsRef.current].filter(Boolean);
+        const animateTargets = [titleRef.current, textRef.current, actionsRef.current].filter(Boolean);
         if (animateTargets.length > 0) {
             gsap.set(animateTargets, {
                 opacity: 0,
@@ -34,6 +35,10 @@ const Hero = () => {
         // Entrance Animation Sequence
         tl.to(overlayRef.current, { opacity: 1, duration: 1.5 })
             .to(imageRef.current, { scale: 1, filter: "blur(0px)", duration: 2 }, 0);
+
+        if (titleRef.current) {
+            tl.to(titleRef.current, { opacity: 1, y: 0, duration: 1 }, 0.8);
+        }
 
         if (textRef.current) {
             tl.to(textRef.current, { opacity: 1, y: 0, duration: 1 }, 1);
@@ -56,7 +61,7 @@ const Hero = () => {
         });
 
         // Content subtle float up on scroll
-        const scrollTargets = [textRef.current, actionsRef.current].filter(Boolean);
+        const scrollTargets = [titleRef.current, textRef.current, actionsRef.current].filter(Boolean);
         if (scrollTargets.length > 0) {
             gsap.to(scrollTargets, {
                 y: -30,
@@ -90,13 +95,11 @@ const Hero = () => {
 
             <div className="container mx-auto px-4 relative z-20">
                 <div className="max-w-4xl mx-auto text-center">
-                    <SplitTextReveal
-                        className="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-6 md:mb-10 tracking-tighter"
-                        type="words"
-                        delay={0.1}
-                    >
-                        {t.raw('title')}
-                    </SplitTextReveal>
+                    <BrandText
+                        ref={titleRef}
+                        className="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-6 md:mb-10 tracking-tighter block"
+                        text={t.raw('title')}
+                    />
 
 
                     <BrandText

@@ -2,7 +2,8 @@
 
 import { useEffect, ReactNode } from "react";
 import Lenis from "lenis";
-import { gsap, ScrollTrigger } from "@/lib/gsap-animations";
+import { gsap, ScrollTrigger, registerGSAPPlugins } from "@/lib/gsap-animations";
+
 
 interface SmoothScrollProps {
     children: ReactNode;
@@ -10,6 +11,7 @@ interface SmoothScrollProps {
 
 export default function SmoothScroll({ children }: SmoothScrollProps) {
     useEffect(() => {
+        registerGSAPPlugins();
         const lenis = new Lenis({
             duration: 1.2,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),

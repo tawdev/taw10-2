@@ -2,13 +2,15 @@
 
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { gsap } from "@/lib/gsap-animations";
+import { gsap, registerGSAPPlugins } from "@/lib/gsap-animations";
 import Image from "next/image";
+
 
 const Preloader = () => {
     const [isVisible, setIsVisible] = useState(true);
 
     useEffect(() => {
+        registerGSAPPlugins();
         const tl = gsap.timeline({
             onComplete: () => {
                 setIsVisible(false);
