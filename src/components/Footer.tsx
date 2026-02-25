@@ -103,7 +103,7 @@ const Footer = () => {
                 </div>
 
                 <div className="pt-12 border-t border-white/5 text-center text-white/30 text-sm">
-                    <p>&copy; {new Date().getFullYear()} <a href="https://cdigital.ma" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors duration-300 font-medium">CDigital</a>. {t('rights')}</p>
+                    <p>&copy; {new Date().getFullYear()} <a href="https://cdigital.ma" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-white transition-colors duration-300 font-medium">Cdigital</a>. {t('rights')}</p>
                 </div>
             </div>
         </footer>

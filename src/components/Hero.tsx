@@ -122,18 +122,15 @@ const Hero = () => {
                             </a>
                         </MagneticButton>
 
-                        <div className="flex flex-col gap-2 group cursor-pointer">
-                            <a
-                                href="tel:+212524308038"
-                                className="text-white group-hover:text-secondary transition-colors font-bold text-2xl flex items-center gap-4 decoration-secondary/30 underline-offset-8 underline"
-                            >
-                                <div className="bg-white/10 p-2 rounded-full group-hover:bg-secondary group-hover:text-primary transition-all">
-                                    <Phone size={22} />
-                                </div>
-                                +212 52430-8038
-                            </a>
-                            <span className="text-white/40 text-xs ml-14 italic tracking-widest uppercase">Consultation 24/7</span>
-                        </div>
+                        <a
+                            href="tel:+212524308038"
+                            className="text-white group hover:text-secondary transition-colors font-bold text-2xl flex items-center gap-4 decoration-secondary/30 underline-offset-8 underline"
+                        >
+                            <div className="bg-white/10 p-2 rounded-full group-hover:bg-secondary group-hover:text-primary transition-all">
+                                <Phone size={22} />
+                            </div>
+                            +212 52430-8038
+                        </a>
                     </div>
                 </div>
             </div>
