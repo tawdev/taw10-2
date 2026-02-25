@@ -12,6 +12,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import SplitTextReveal from "@/components/SplitTextReveal";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
+import BrandText from "@/components/BrandText";
 
 export default function ServiceDetailPage() {
     const params = useParams();
@@ -68,14 +69,10 @@ export default function ServiceDetailPage() {
                             {t(`items.${service.slug}.title`)}
                         </SplitTextReveal>
 
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.4 }}
-                            className="text-xl md:text-2xl text-white/70 font-light leading-relaxed max-w-2xl"
-                        >
-                            {t(`items.${service.slug}.text`)}
-                        </motion.p>
+                        <BrandText
+                            className="text-xl md:text-2xl text-white/70 font-light leading-relaxed max-w-2xl block"
+                            text={t.raw(`items.${service.slug}.text`).replace(/<\/?[^>]+(>|$)/g, "")}
+                        />
                     </div>
                 </div>
             </section>
@@ -91,9 +88,10 @@ export default function ServiceDetailPage() {
                                     {tDetail('overview')}
                                     <span className="absolute -bottom-2 left-0 w-12 h-1 bg-secondary rounded-full" />
                                 </h2>
-                                <p className="text-gray-600 text-lg leading-relaxed">
-                                    {t(`items.${service.slug}.fullDescription`)}
-                                </p>
+                                <BrandText
+                                    className="text-gray-600 text-lg leading-relaxed block"
+                                    text={t.raw(`items.${service.slug}.fullDescription`).replace(/<\/?[^>]+(>|$)/g, "")}
+                                />
 
                                 <div className="pt-8">
                                     <Link

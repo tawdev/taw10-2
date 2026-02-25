@@ -6,6 +6,7 @@ import { CheckCircle2, Quote, Globe } from "lucide-react";
 import { gsap, useGSAP } from "@/lib/gsap-animations";
 import ScrollReveal from "./ScrollReveal";
 import SplitTextReveal from "./SplitTextReveal";
+import BrandText from "./BrandText";
 import { useTranslations } from "next-intl";
 
 const WhyUs = () => {
@@ -56,7 +57,7 @@ const WhyUs = () => {
                                 <div ref={image1Ref}>
                                     <Image
                                         src="/images/b_Image_de_fond_modern.png"
-                                        alt={t('title')}
+                                        alt={t.raw('title')}
                                         width={600}
                                         height={800}
                                         className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -84,7 +85,7 @@ const WhyUs = () => {
                                 className="text-secondary font-bold uppercase tracking-[0.2em] text-sm mb-6 block"
                                 type="chars"
                             >
-                                {t('title')}
+                                {t.raw('title')}
                             </SplitTextReveal>
                             <SplitTextReveal
                                 className="text-5xl md:text-6xl font-bold text-primary mb-10 leading-[1.1]"
@@ -96,9 +97,10 @@ const WhyUs = () => {
                         </div>
 
                         <ScrollReveal delay={0.4}>
-                            <p className="text-gray-500 text-xl mb-12 leading-relaxed font-light">
-                                {t('description')}
-                            </p>
+                            <BrandText
+                                className="text-gray-500 text-xl mb-12 leading-relaxed font-light block"
+                                text={t.raw('description').replace(/<\/?[^>]+(>|$)/g, "")}
+                            />
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                                 {benefits.map((benefit, i) => (
@@ -118,7 +120,7 @@ const WhyUs = () => {
                                 </p>
                                 <div className="mt-6 flex items-center gap-4">
                                     <div className="w-12 h-1 bg-secondary rounded-full" />
-                                    <span className="font-bold text-primary uppercase tracking-widest text-sm">{t('direction')}</span>
+                                    <BrandText className="font-bold text-primary uppercase tracking-widest text-sm" text={t.raw('direction').replace(/<\/?[^>]+(>|$)/g, "")} />
                                 </div>
                             </div>
                         </ScrollReveal>

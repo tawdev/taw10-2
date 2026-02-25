@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { Link } from "@/navigation";
 import ScrollReveal from "./ScrollReveal";
 import SplitTextReveal from "./SplitTextReveal";
+import BrandText from "./BrandText";
 import { services } from "@/data/services";
 import { useTranslations } from "next-intl";
 
@@ -47,7 +48,7 @@ const Services = () => {
                         className="text-secondary font-bold uppercase tracking-[0.25em] text-sm mb-6 block"
                         type="chars"
                     >
-                        {t('title')}
+                        {t.raw('title')}
                     </SplitTextReveal>
                     <SplitTextReveal
                         className="text-5xl md:text-7xl font-extrabold text-primary mb-10 leading-tight tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/80 to-secondary"
@@ -57,9 +58,10 @@ const Services = () => {
                         {t('subtitle')}
                     </SplitTextReveal>
                     <ScrollReveal delay={0.4}>
-                        <p className="text-gray-500 text-xl font-light leading-relaxed max-w-2xl mx-auto">
-                            {t('description')}
-                        </p>
+                        <BrandText
+                            className="text-gray-500 text-xl font-light leading-relaxed max-w-2xl mx-auto block"
+                            text={t.raw('description').replace(/<\/?[^>]+(>|$)/g, "")}
+                        />
                     </ScrollReveal>
                 </div>
 

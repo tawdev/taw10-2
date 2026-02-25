@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useEffect, Suspense } from "react";
-import { Mail, Phone, MapPin, Send, ChevronDown } from "lucide-react";
+import { Mail, Phone, MapPin, Send, MessageSquare, Clock, ChevronDown } from "lucide-react";
+import BrandText from "./BrandText";
 import { motion } from "framer-motion";
 import { useSearchParams } from "next/navigation";
 import ScrollReveal from "./ScrollReveal";
@@ -97,9 +98,10 @@ const ContactContent = () => {
                         </div>
 
                         <ScrollReveal delay={0.4}>
-                            <p className="text-gray-500 text-xl mb-16 leading-relaxed font-light">
-                                {t('description')}
-                            </p>
+                            <BrandText
+                                className="text-gray-500 text-xl mb-16 leading-relaxed font-light block"
+                                text={t.raw('description').replace(/<\/?[^>]+(>|$)/g, "")}
+                            />
 
                             <div className="space-y-10">
                                 <div className="flex items-start gap-8 group">
@@ -131,7 +133,7 @@ const ContactContent = () => {
                                     </div>
                                     <div>
                                         <h4 className="font-bold text-primary mb-2 text-xl tracking-tight">{t('info.address')}</h4>
-                                        <p className="text-gray-500 text-lg">N, TAW10, lot Iguder, 48 AV Alla El Fassi, Marrakech</p>
+                                        <BrandText className="text-gray-900 font-bold text-lg block" text="N° 80-81, Angle Av. Hassan II & Rue de la Liberté, Résidence TAW 10, Guéliz, Marrakech" />
                                         <p className="text-secondary font-bold text-sm uppercase tracking-widest mt-2">{t('info.address')}</p>
                                     </div>
                                 </div>

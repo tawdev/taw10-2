@@ -1,13 +1,26 @@
 @import "tailwindcss";
 
+:root {
+  --color-primary: #0a192f;
+  --color-secondary: #d4af37;
+}
+
 @theme {
-  --color-primary: #1a365d;
+  --color-primary: #0a192f;
   --color-primary-light: #2c5282;
   --color-secondary: #d4af37;
   --color-accent: #f6ad55;
 
-  --font-montserrat: "Montserrat", sans-serif;
-  --font-cairo: "Cairo", sans-serif;
+  --font-montserrat: var(--font-montserrat);
+  --font-cairo: var(--font-cairo);
+}
+
+:root {
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+}
+
+[lang="ar"] {
+  font-family: var(--font-cairo), system-ui, sans-serif;
 }
 
 :root {
@@ -48,5 +61,22 @@ body {
 
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-light;
+  }
+
+  .brand-highlight {
+    font-family: var(--font-montserrat), sans-serif !important;
+    font-weight: 900 !important;
+    color: #ffd700 !important;
+    font-size: 1.15em !important;
+    display: inline-block !important;
+    letter-spacing: -0.01em !important;
+    text-shadow: 0 0 12px rgba(255, 215, 0, 0.4) !important;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .brand-highlight:hover {
+    transform: scale(1.1) translateY(-2px);
+    color: #ffffff !important;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.8) !important;
   }
 }

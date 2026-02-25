@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { Link } from "@/navigation";
 import ScrollReveal from "./ScrollReveal";
 import SplitTextReveal from "./SplitTextReveal";
+import BrandText from "./BrandText";
 import { useTranslations } from "next-intl";
 
 const Pricing = () => {
@@ -106,7 +107,7 @@ const Pricing = () => {
                         className="text-secondary font-bold uppercase tracking-[0.2em] text-sm mb-4 block"
                         type="chars"
                     >
-                        {t('title')}
+                        {t.raw('title')}
                     </SplitTextReveal>
                     <SplitTextReveal
                         className="text-5xl md:text-6xl font-bold text-primary mb-8"
@@ -116,9 +117,10 @@ const Pricing = () => {
                         {t('subtitle')}
                     </SplitTextReveal>
                     <ScrollReveal delay={0.4}>
-                        <p className="text-gray-500 text-xl font-light">
-                            {t('description')}
-                        </p>
+                        <BrandText
+                            className="text-gray-500 text-xl font-light block"
+                            text={t.raw('description').replace(/<\/?[^>]+(>|$)/g, "")}
+                        />
                     </ScrollReveal>
                 </div>
 

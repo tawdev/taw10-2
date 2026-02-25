@@ -6,6 +6,7 @@ import { Linkedin, Mail, ArrowRight } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import SplitTextReveal from "./SplitTextReveal";
 import MagneticButton from "./MagneticButton";
+import BrandText from "./BrandText";
 import { useTranslations } from "next-intl";
 
 const Team = () => {
@@ -15,19 +16,19 @@ const Team = () => {
         {
             name: "Hicham MHAMEDI",
             role: t('members.hicham.role'),
-            description: t('members.hicham.description'),
+            description: t.raw('members.hicham.description'),
             image: "/images/team/hicham.jpeg",
         },
         {
             name: "Salma AAOUAD",
             role: t('members.salma.role'),
-            description: t('members.salma.description'),
+            description: t.raw('members.salma.description'),
             image: "/salma.jpeg",
         },
         {
             name: "AFAFE KHLIFAL",
             role: t('members.afafe.role'),
-            description: t('members.afafe.description'),
+            description: t.raw('members.afafe.description'),
             image: "/afafe.jpeg",
         },
     ];
@@ -41,7 +42,7 @@ const Team = () => {
                             className="text-secondary font-bold uppercase tracking-[0.2em] text-sm mb-4 block"
                             type="chars"
                         >
-                            {t('title')}
+                            {t.raw('title')}
                         </SplitTextReveal>
                         <SplitTextReveal
                             className="text-5xl md:text-6xl font-bold text-primary mb-0"
@@ -53,7 +54,7 @@ const Team = () => {
                     </div>
                     <ScrollReveal delay={0.4}>
                         <p className="text-gray-500 text-xl font-light max-w-md">
-                            {t('description')}
+                            {t.raw('description')}
                         </p>
                     </ScrollReveal>
                 </div>
@@ -91,9 +92,10 @@ const Team = () => {
                                     {member.name}
                                 </h3>
                                 <p className="text-secondary font-bold uppercase tracking-widest text-xs mb-4">{member.role}</p>
-                                <p className="text-gray-500 font-light leading-relaxed">
-                                    {member.description}
-                                </p>
+                                <BrandText
+                                    className="text-gray-500 font-light leading-relaxed block"
+                                    text={member.description.replace(/<\/?[^>]+(>|$)/g, "")}
+                                />
                             </div>
                         </ScrollReveal>
                     ))}
@@ -114,7 +116,7 @@ const Team = () => {
                                 href="#contact"
                                 className="bg-secondary text-primary px-10 py-5 rounded-full font-bold text-lg flex items-center gap-4 hover:bg-white transition-all shadow-xl group/btn"
                             >
-                                {t('cta.button')}
+                                {t.raw('cta.button')}
                                 <ArrowRight size={22} className="group-hover/btn:translate-x-2 transition-transform" />
                             </a>
                         </MagneticButton>

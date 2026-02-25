@@ -3,7 +3,8 @@
 import React from "react";
 import Image from "next/image";
 import { Link } from "@/navigation";
-import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone, MapPin, Clock } from "lucide-react";
+import BrandText from "./BrandText";
 import { useTranslations } from "next-intl";
 
 const Footer = () => {
@@ -23,9 +24,10 @@ const Footer = () => {
                                 className="object-contain"
                             />
                         </Link>
-                        <p className="text-white/60 leading-relaxed">
-                            {t('description')}
-                        </p>
+                        <BrandText
+                            className="text-white/60 leading-relaxed block"
+                            text={t.raw('description').replace(/<\/?[^>]+(>|$)/g, "")}
+                        />
                         <div className="flex gap-4">
                             {[Facebook, Instagram, Twitter, Linkedin].map((Icon, i) => (
                                 <a
@@ -94,17 +96,14 @@ const Footer = () => {
                         <ul className="space-y-6">
                             <li className="flex gap-4 items-start">
                                 <MapPin className="text-secondary shrink-0" size={20} />
-                                <span className="text-white/60 leading-relaxed">
-                                    N , TAW10, lot Iguder, 48 AV Alla El Fassi<br />
-                                    Marrakech 40000, Morocco
-                                </span>
+                                <BrandText className="text-white/60 text-sm block" text="Angle Av. Hassan II & Rue de la Liberté, Résidence TAW 10, Guéliz, Marrakech" />
                             </li>
                         </ul>
                     </div>
                 </div>
 
                 <div className="pt-12 border-t border-white/5 text-center text-white/30 text-sm">
-                    <p>&copy; {new Date().getFullYear()} C-Digital. {t('rights')}</p>
+                    <p>&copy; {new Date().getFullYear()} <a href="https://cdigital.ma" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors duration-300 font-medium">CDigital</a>. {t('rights')}</p>
                 </div>
             </div>
         </footer>
