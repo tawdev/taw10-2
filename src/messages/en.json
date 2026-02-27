@@ -1,4 +1,25 @@
 {
+    "Metadata": {
+        "title": "Business Creation in Morocco & Domiciliation in Marrakech | TAW 10",
+        "description": "Create your business in Morocco quickly with TAW 10. Domiciliation in Marrakech, full legal and administrative services.",
+        "keywords": "business creation Morocco, domiciliation Marrakech, online company creation Morocco, business center Marrakech",
+        "Home": {
+            "title": "Business Creation in Morocco & Domiciliation in Marrakech | TAW 10",
+            "description": "Create your business in Morocco quickly with TAW 10. Domiciliation in Marrakech, full legal and administrative services."
+        },
+        "About": {
+            "title": "About TAW 10 | Your Business Partner in Morocco",
+            "description": "Discover the story of TAW 10 and our mission to support entrepreneurs in Morocco. Expertise, prestige, and strategic advice."
+        },
+        "Services": {
+            "title": "Our B2B Services | Incorporation, Domiciliation, Legal in Morocco",
+            "description": "Explore our complete solutions: premium domiciliation, company formation, virtual secretariat, and administrative support in Morocco."
+        },
+        "Contact": {
+            "title": "Contact TAW 10 | Domiciliation and Company Formation",
+            "description": "Ready to launch your project? Contact our experts in Marrakech for a free consultation on your business creation in Morocco."
+        }
+    },
     "Navbar": {
         "home": "Home",
         "services": "Services",

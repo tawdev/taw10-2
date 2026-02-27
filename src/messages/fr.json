@@ -1,4 +1,25 @@
 {
+    "Metadata": {
+        "title": "Création d'Entreprise au Maroc & Domiciliation Marrakech | TAW 10",
+        "description": "Créez votre entreprise au Maroc rapidement avec TAW 10. Domiciliation à Marrakech, services juridiques et administratifs complets.",
+        "keywords": "création entreprise Maroc, domiciliation Marrakech, création société en ligne Maroc, centre d'affaires Marrakech",
+        "Home": {
+            "title": "Création d'Entreprise au Maroc & Domiciliation Marrakech | TAW 10",
+            "description": "Créez votre entreprise au Maroc rapidement avec TAW 10. Domiciliation à Marrakech, services juridiques et administratifs complets."
+        },
+        "About": {
+            "title": "À Propos de TAW 10 | Votre Partenaire Business au Maroc",
+            "description": "Découvrez l'histoire de TAW 10 et notre mission d'accompagnement des entrepreneurs au Maroc. Expertise, prestige et conseil stratégique."
+        },
+        "Services": {
+            "title": "Nos Services B2B | Création, Domiciliation, Juridique au Maroc",
+            "description": "Explorez nos solutions complètes : domiciliation premium, création de société, secrétariat virtuel et support administratif au Maroc."
+        },
+        "Contact": {
+            "title": "Contactez TAW 10 | Domiciliation et Création de Société",
+            "description": "Prêt à lancer votre projet ? Contactez nos experts à Marrakech pour une consultation gratuite sur votre création d'entreprise au Maroc."
+        }
+    },
     "Navbar": {
         "home": "Accueil",
         "services": "Services",

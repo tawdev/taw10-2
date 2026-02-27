@@ -1,6 +1,18 @@
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Services from "@/components/Services";
-import Footer from "@/components/Footer";
+import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'Metadata.Services' });
+
+    return {
+        title: t('title'),
+        description: t('description'),
+    };
+}
 
 export default function ServicesPage() {
     return (
