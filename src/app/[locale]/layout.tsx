@@ -65,6 +65,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
             description: t('description'),
             images: ['/og-image.jpg'],
         },
+        icons: {
+            icon: [
+                { url: '/favicon.ico' },
+                { url: '/icon.png', type: 'image/png' },
+            ],
+            apple: [
+                { url: '/apple-icon.png' },
+            ],
+        },
     };
 }
 
