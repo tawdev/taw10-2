@@ -112,10 +112,10 @@ export default async function LocaleLayout({
                             "image": "https://taw10.ma/logo.png",
                             "@id": "https://taw10.ma",
                             "url": "https://taw10.ma",
-                            "telephone": "+212000000000",
+                            "telephone": "+212524308038",
                             "address": {
                                 "@type": "PostalAddress",
-                                "streetAddress": "Guéliz",
+                                "streetAddress": "Lot iguider N48 AV Allal El Fassi",
                                 "addressLocality": "Marrakech",
                                 "postalCode": "40000",
                                 "addressCountry": "MA"

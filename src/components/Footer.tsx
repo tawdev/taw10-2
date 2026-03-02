@@ -80,8 +80,8 @@ const Footer = () => {
                             <li className="flex gap-4 items-start">
                                 <Phone className="text-secondary shrink-0" size={20} />
                                 <div className="space-y-1">
-                                    <p>+212 52430-8038</p>
-                                    <p>+212 607790956</p>
+                                    <p dir="ltr">+212 52430-8038</p>
+                                    <p dir="ltr">+212 607790956</p>
                                 </div>
                             </li>
                         </ul>
@@ -96,7 +96,7 @@ const Footer = () => {
                         <ul className="space-y-6">
                             <li className="flex gap-4 items-start">
                                 <MapPin className="text-secondary shrink-0" size={20} />
-                                <BrandText className="text-white/60 text-sm block" text="Angle Av. Hassan II & Rue de la Liberté, Résidence TAW 10, Guéliz, Marrakech" />
+                                <BrandText className="text-white/60 text-sm block" text="Lot iguider N48 AV Allal El Fassi, Marrakesh, Morocco" />
                             </li>
                         </ul>
                     </div>

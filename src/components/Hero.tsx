@@ -125,6 +125,7 @@ const Hero = () => {
                         <a
                             href="tel:+212524308038"
                             className="text-white group hover:text-secondary transition-colors font-bold text-2xl flex items-center gap-4 decoration-secondary/30 underline-offset-8 underline"
+                            dir="ltr"
                         >
                             <div className="bg-white/10 p-2 rounded-full group-hover:bg-secondary group-hover:text-primary transition-all">
                                 <Phone size={22} />

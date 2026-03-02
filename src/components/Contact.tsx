@@ -121,8 +121,8 @@ const ContactContent = () => {
                                     <div>
                                         <h4 className="font-bold text-primary mb-2 text-xl tracking-tight">{t('info.phone')}</h4>
                                         <div className="space-y-2">
-                                            <p className="text-gray-500 text-lg">+212 52430-8038</p>
-                                            <p className="text-gray-500 text-lg">+212 607790956</p>
+                                            <p className="text-gray-500 text-lg" dir="ltr">+212 52430-8038</p>
+                                            <p className="text-gray-500 text-lg" dir="ltr">+212 607790956</p>
                                         </div>
                                     </div>
                                 </div>
@@ -133,7 +133,7 @@ const ContactContent = () => {
                                     </div>
                                     <div>
                                         <h4 className="font-bold text-primary mb-2 text-xl tracking-tight">{t('info.address')}</h4>
-                                        <BrandText className="text-gray-900 font-bold text-lg block" text="N° 80-81, Angle Av. Hassan II & Rue de la Liberté, Résidence TAW 10, Guéliz, Marrakech" />
+                                        <BrandText className="text-gray-900 font-bold text-lg block" text="Lot iguider N48 AV Allal El Fassi, Marrakesh, Morocco" />
                                         <p className="text-secondary font-bold text-sm uppercase tracking-widest mt-2">{t('info.address')}</p>
                                     </div>
                                 </div>
