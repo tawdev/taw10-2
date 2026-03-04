@@ -59,6 +59,7 @@ const Services = () => {
                     </SplitTextReveal>
                     <ScrollReveal delay={0.4}>
                         <BrandText
+                            as="p"
                             className="text-gray-500 text-xl font-light leading-relaxed max-w-2xl mx-auto block"
                             text={t.raw('description').replace(/<\/?[^>]+(>|$)/g, "")}
                         />

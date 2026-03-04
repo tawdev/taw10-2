@@ -118,6 +118,7 @@ const Pricing = () => {
                     </SplitTextReveal>
                     <ScrollReveal delay={0.4}>
                         <BrandText
+                            as="p"
                             className="text-gray-500 text-xl font-light block"
                             text={t.raw('description').replace(/<\/?[^>]+(>|$)/g, "")}
                         />

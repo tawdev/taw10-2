@@ -78,6 +78,7 @@ const Testimonials = () => {
                                     ))}
                                 </div>
                                 <BrandText
+                                    as="p"
                                     className="text-white/80 text-lg mb-10 leading-relaxed font-light italic flex-grow block"
                                     text={`“${t.raw(`reviews.${i}.content`).replace(/<\/?[^>]+(>|$)/g, "")}”`}
                                 />

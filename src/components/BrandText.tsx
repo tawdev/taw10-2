@@ -6,9 +6,10 @@ import { cn } from "@/lib/utils";
 interface BrandTextProps {
     text: string;
     className?: string;
+    as?: 'span' | 'p' | 'div' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
-const BrandText = forwardRef<HTMLSpanElement, BrandTextProps>(({ text, className }, ref) => {
+const BrandText = forwardRef<HTMLElement, BrandTextProps>(({ text, className, as: Component = 'span' }, ref) => {
     const content = typeof text === 'string' ? text : "";
 
     // Most permissive matching: "taw" followed by anything that isn't a word character, followed by "10"
@@ -16,7 +17,7 @@ const BrandText = forwardRef<HTMLSpanElement, BrandTextProps>(({ text, className
     const parts = content.split(regex);
 
     return (
-        <span ref={ref} className={cn("inline", className)}>
+        <Component ref={ref as any} className={cn(className)}>
             {parts.map((part, i) => {
                 const normalized = part.toLowerCase().replace(/[^taw0-9]/g, "");
 
@@ -38,7 +39,7 @@ const BrandText = forwardRef<HTMLSpanElement, BrandTextProps>(({ text, className
                 }
                 return <React.Fragment key={i}>{part}</React.Fragment>;
             })}
-        </span>
+        </Component>
     );
 });
 

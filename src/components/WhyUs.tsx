@@ -98,6 +98,7 @@ const WhyUs = () => {
 
                         <ScrollReveal delay={0.4}>
                             <BrandText
+                                as="p"
                                 className="text-gray-500 text-xl mb-12 leading-relaxed font-light block"
                                 text={t.raw('description').replace(/<\/?[^>]+(>|$)/g, "")}
                             />

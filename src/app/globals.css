@@ -59,7 +59,7 @@ h2 {
 }
 
 p {
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--font-playfair), serif !important;
 }
 
 span {
