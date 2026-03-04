@@ -62,6 +62,17 @@ const Navbar = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    const handleHomeClick = (e: React.MouseEvent) => {
+        if (pathname === "/") {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+            setIsOpen(false);
+        }
+    };
+
     const navLinks = [
         { name: t('home'), href: "/" },
         { name: t('services'), href: "/#services" },
@@ -131,8 +142,12 @@ const Navbar = () => {
                 >
                     <div className="flex items-center justify-between">
                         {/* Logo Fix: Specific size and priority */}
-                        <Link href="/" className="relative flex items-center transition-transform hover:scale-105 active:scale-95">
-                            <div className="relative h-14 w-36 md:h-16 md:w-44">
+                        <Link
+                            href="/"
+                            onClick={handleHomeClick}
+                            className="relative flex items-center transition-transform hover:scale-105 active:scale-95"
+                        >
+                            <div className="relative h-10 w-28 md:h-16 md:w-44">
                                 <Image
                                     src="/logo.png"
                                     alt="TAW10 Logo"
@@ -149,6 +164,7 @@ const Navbar = () => {
                                 <li key={link.name}>
                                     <Link
                                         href={link.href}
+                                        onClick={link.href === "/" ? handleHomeClick : undefined}
                                         className={cn(
                                             "text-white/80 text-sm font-bold uppercase hover:text-secondary transition-colors relative group",
                                             locale === 'ar' ? "tracking-normal" : "tracking-widest"
@@ -238,7 +254,13 @@ const Navbar = () => {
                                 <Link
                                     href={link.href}
                                     className="text-4xl md:text-5xl text-white font-black uppercase tracking-tighter hover:text-secondary transition-colors"
-                                    onClick={() => setIsOpen(false)}
+                                    onClick={(e) => {
+                                        if (link.href === "/") {
+                                            handleHomeClick(e);
+                                        } else {
+                                            setIsOpen(false);
+                                        }
+                                    }}
                                 >
                                     {link.name}
                                 </Link>

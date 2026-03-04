@@ -78,7 +78,7 @@ const Hero = () => {
     }, { scope: containerRef });
 
     return (
-        <section ref={containerRef} className="relative h-screen min-h-[700px] w-full overflow-hidden flex items-center pt-48 md:pt-40">
+        <section id="home" ref={containerRef} className="relative min-h-[500px] h-[90vh] md:h-screen w-full overflow-hidden flex items-center pt-32 md:pt-40 pb-20 md:pb-0">
             {/* Background Layer */}
             <div className="absolute inset-0 z-0">
                 <div ref={imageRef} className="relative h-[120%] w-full -top-[10%]">
@@ -97,14 +97,14 @@ const Hero = () => {
                 <div className="max-w-4xl mx-auto text-center">
                     <BrandText
                         ref={titleRef}
-                        className="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-6 md:mb-10 tracking-tighter block"
+                        className="text-3xl md:text-5xl text-white leading-tight mb-6 md:mb-10 tracking-tighter block audiowide-regular"
                         text={t.raw('title')}
                     />
 
 
                     <BrandText
                         ref={textRef}
-                        className="text-white/70 text-lg md:text-2xl mb-8 md:mb-14 max-w-2xl leading-relaxed font-light mx-auto block"
+                        className="text-white/70 text-lg md:text-2xl mb-8 md:mb-14 max-w-2xl leading-relaxed font-light mx-auto block rubik-dirt-regular"
                         text={String(t.raw('subtitle') || '').replace(/<\/?[^>]+(>|$)/g, "")}
                     />
 
@@ -115,7 +115,7 @@ const Hero = () => {
                         <MagneticButton>
                             <a
                                 href="#contact"
-                                className="bg-secondary text-primary px-12 py-6 rounded-full font-bold text-xl flex items-center gap-4 hover:bg-white transition-all shadow-2xl group overflow-hidden relative"
+                                className="bg-secondary text-primary px-12 py-6 rounded-full font-bold text-xl flex items-center font-montserrat gap-4 hover:bg-white transition-all shadow-2xl group overflow-hidden relative"
                             >
                                 <span className="relative z-10">{t('cta')}</span>
                                 <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform relative z-10" />
@@ -140,10 +140,10 @@ const Hero = () => {
             <div className="absolute top-1/2 -right-48 w-96 h-96 bg-secondary/10 rounded-full blur-[150px] z-10 animate-pulse" />
             <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-blue-500/10 rounded-full blur-[150px] z-10" />
 
-            {/* Scroll Indicator */}
-            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-4 opacity-40">
-                <div className="w-[1px] h-20 bg-gradient-to-b from-white to-transparent" />
-                <span className="text-white text-[10px] uppercase tracking-[0.5em] font-bold vertical-text">Scroll</span>
+            {/* Scroll Indicator - Hidden on very small screens to avoid overlap */}
+            <div className="absolute bottom-6 md:bottom-12 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2 md:gap-4 opacity-40 hidden sm:flex">
+                <div className="w-[1px] h-10 md:h-20 bg-gradient-to-b from-white to-transparent" />
+                <span className="text-white text-[8px] md:text-[10px] uppercase tracking-[0.5em] font-bold vertical-text">Scroll</span>
             </div>
         </section>
     );

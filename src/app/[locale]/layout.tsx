@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Cairo } from "next/font/google";
+import { Montserrat, Cairo, Playfair_Display, Inter, Poppins, Audiowide, Rubik_Dirt } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -20,9 +20,42 @@ const montserrat = Montserrat({
     weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
+const playfair = Playfair_Display({
+    variable: "--font-playfair",
+    subsets: ["latin"],
+    display: "swap",
+});
+
+const inter = Inter({
+    variable: "--font-inter",
+    subsets: ["latin"],
+    display: "swap",
+});
+
+const poppins = Poppins({
+    variable: "--font-poppins",
+    subsets: ["latin"],
+    display: "swap",
+    weight: ["300", "400", "500", "600", "700"],
+});
+
 const cairo = Cairo({
     variable: "--font-cairo",
     subsets: ["arabic"],
+    display: "swap",
+});
+
+const audiowide = Audiowide({
+    variable: "--font-audiowide",
+    subsets: ["latin"],
+    weight: "400",
+    display: "swap",
+});
+
+const rubikDirt = Rubik_Dirt({
+    variable: "--font-rubik-dirt",
+    subsets: ["latin"],
+    weight: "400",
     display: "swap",
 });
 
@@ -98,8 +131,13 @@ export default async function LocaleLayout({
 
     return (
         <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} className="scroll-smooth">
+            <head>
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+                <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Rubik+Dirt&display=swap" rel="stylesheet" />
+            </head>
             <body
-                className={`${montserrat.variable} ${cairo.variable} antialiased selection:bg-secondary/30`}
+                className={`${montserrat.variable} ${playfair.variable} ${inter.variable} ${poppins.variable} ${cairo.variable} ${audiowide.variable} ${rubikDirt.variable} antialiased selection:bg-secondary/30`}
             >
                 <NextIntlClientProvider messages={messages}>
                     <Preloader />
