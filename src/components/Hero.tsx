@@ -78,7 +78,7 @@ const Hero = () => {
     }, { scope: containerRef });
 
     return (
-        <section id="home" ref={containerRef} className="relative min-h-[500px] h-[90vh] md:h-screen w-full overflow-hidden flex items-center pt-32 md:pt-40 pb-20 md:pb-0">
+        <section id="home" ref={containerRef} className="relative min-h-[100dvh] md:min-h-screen w-full overflow-hidden flex flex-col justify-center pt-24 pb-24 md:pt-32 md:pb-0">
             {/* Background Layer */}
             <div className="absolute inset-0 z-0">
                 <div ref={imageRef} className="relative h-[120%] w-full -top-[10%]">
@@ -93,42 +93,42 @@ const Hero = () => {
                 <div ref={overlayRef} className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-transparent z-10" />
             </div>
 
-            <div className="container mx-auto px-4 relative z-20">
+            <div className="container mx-auto px-4 relative z-20 md:mt-0">
                 <div className="max-w-4xl mx-auto text-center">
                     <BrandText
                         ref={titleRef}
-                        className="text-3xl md:text-5xl text-white leading-tight mb-6 md:mb-10 tracking-tighter block audiowide-regular"
+                        className="text-2xl sm:text-3xl md:text-5xl text-white leading-tight mb-8 sm:mb-10 md:mb-14 tracking-tighter block audiowide-regular"
                         text={t.raw('title')}
                     />
 
 
                     <BrandText
                         ref={textRef}
-                        className="text-white/70 text-lg md:text-2xl mb-8 md:mb-14 max-w-2xl leading-relaxed font-light mx-auto block rubik-dirt-regular"
+                        className="text-white/80 text-base sm:text-lg md:text-2xl mb-8 md:mb-14 max-w-2xl leading-relaxed font-light mx-auto block rubik-dirt-regular"
                         text={String(t.raw('subtitle') || '').replace(/<\/?[^>]+(>|$)/g, "")}
                     />
 
                     <div
                         ref={actionsRef}
-                        className="flex flex-wrap gap-10 items-center justify-center"
+                        className="flex flex-col sm:flex-row flex-wrap gap-5 md:gap-10 items-center justify-center"
                     >
                         <MagneticButton>
                             <a
                                 href="#contact"
-                                className="bg-secondary text-primary px-12 py-6 rounded-full font-bold text-xl flex items-center font-montserrat gap-4 hover:bg-white transition-all shadow-2xl group overflow-hidden relative"
+                                className="bg-secondary text-primary px-8 py-4 md:px-12 md:py-6 rounded-full font-bold text-lg md:text-xl flex items-center font-montserrat gap-3 md:gap-4 hover:bg-white transition-all shadow-2xl group overflow-hidden relative"
                             >
                                 <span className="relative z-10">{t('cta')}</span>
-                                <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform relative z-10" />
+                                <ArrowRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform relative z-10" />
                             </a>
                         </MagneticButton>
 
                         <a
                             href="tel:+212524308038"
-                            className="text-white group hover:text-secondary transition-colors font-bold text-2xl flex items-center gap-4 decoration-secondary/30 underline-offset-8 underline"
+                            className="text-white group hover:text-secondary transition-colors font-bold text-lg md:text-2xl flex items-center gap-3 md:gap-4 decoration-secondary/30 underline-offset-8 underline mt-2 sm:mt-0"
                             dir="ltr"
                         >
-                            <div className="bg-white/10 p-2 rounded-full group-hover:bg-secondary group-hover:text-primary transition-all">
-                                <Phone size={22} />
+                            <div className="bg-white/10 p-2 md:p-3 rounded-full group-hover:bg-secondary group-hover:text-primary transition-all">
+                                <Phone className="w-5 h-5 md:w-[22px] md:h-[22px]" />
                             </div>
                             +212 52430-8038
                         </a>
