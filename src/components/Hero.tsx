@@ -110,12 +110,12 @@ const Hero = () => {
 
                     <div
                         ref={actionsRef}
-                        className="flex flex-col sm:flex-row flex-wrap gap-5 md:gap-10 items-center justify-center"
+                        className="flex flex-col md:flex-row flex-wrap gap-5 md:gap-8 items-center justify-center mt-8 md:mt-12"
                     >
                         <MagneticButton>
                             <a
                                 href="#contact"
-                                className="bg-secondary text-primary px-8 py-4 md:px-12 md:py-6 rounded-full font-bold text-lg md:text-xl flex items-center font-montserrat gap-3 md:gap-4 hover:bg-white transition-all shadow-2xl group overflow-hidden relative"
+                                className="bg-secondary text-primary px-8 py-4 md:px-10 md:py-5 rounded-full font-bold text-lg md:text-xl flex items-center font-montserrat gap-3 md:gap-4 hover:bg-white transition-all shadow-2xl group overflow-hidden relative"
                             >
                                 <span className="relative z-10">{t('cta')}</span>
                                 <ArrowRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform relative z-10" />
@@ -124,12 +124,10 @@ const Hero = () => {
 
                         <a
                             href="tel:+212524308038"
-                            className="text-white group hover:text-secondary transition-colors font-bold text-lg md:text-2xl flex items-center gap-3 md:gap-4 decoration-secondary/30 underline-offset-8 underline mt-2 sm:mt-0"
+                            className="bg-transparent text-white md:bg-white/10 px-6 py-4 md:px-8 md:py-5 rounded-full font-bold text-lg md:text-xl flex items-center gap-3 transition-colors md:hover:bg-secondary md:hover:text-primary mt-2 md:mt-0"
                             dir="ltr"
                         >
-                            <div className="bg-white/10 p-2 md:p-3 rounded-full group-hover:bg-secondary group-hover:text-primary transition-all">
-                                <Phone className="w-5 h-5 md:w-[22px] md:h-[22px]" />
-                            </div>
+                            <Phone className="w-5 h-5" />
                             +212 52430-8038
                         </a>
                     </div>
