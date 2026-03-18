@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Cairo, Playfair_Display, Inter, Poppins, Audiowide, Rubik_Dirt } from "next/font/google";
+import { Montserrat, Cairo, Playfair_Display, Inter, Poppins, Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -46,17 +46,17 @@ const cairo = Cairo({
     display: "swap",
 });
 
-const audiowide = Audiowide({
-    variable: "--font-audiowide",
+const cormorant = Cormorant_Garamond({
+    variable: "--font-cormorant",
     subsets: ["latin"],
-    weight: "400",
+    weight: ["400", "500", "600", "700"],
     display: "swap",
 });
 
-const rubikDirt = Rubik_Dirt({
-    variable: "--font-rubik-dirt",
+const plusJakarta = Plus_Jakarta_Sans({
+    variable: "--font-plus-jakarta",
     subsets: ["latin"],
-    weight: "400",
+    weight: ["300", "400", "500", "600", "700", "800"],
     display: "swap",
 });
 
@@ -135,10 +135,9 @@ export default async function LocaleLayout({
             <head>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-                <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Rubik+Dirt&display=swap" rel="stylesheet" />
             </head>
             <body
-                className={`${montserrat.variable} ${playfair.variable} ${inter.variable} ${poppins.variable} ${cairo.variable} ${audiowide.variable} ${rubikDirt.variable} antialiased selection:bg-secondary/30`}
+                className={`${montserrat.variable} ${playfair.variable} ${inter.variable} ${poppins.variable} ${cairo.variable} ${cormorant.variable} ${plusJakarta.variable} antialiased selection:bg-secondary/30`}
             >
                 <NextIntlClientProvider messages={messages}>
                     <Preloader />

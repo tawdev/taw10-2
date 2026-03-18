@@ -97,14 +97,14 @@ const Hero = () => {
                 <div className="max-w-4xl mx-auto text-center">
                     <BrandText
                         ref={titleRef}
-                        className="text-2xl sm:text-3xl md:text-5xl text-white leading-tight mb-8 sm:mb-10 md:mb-14 tracking-tighter block audiowide-regular"
+                        className="text-2xl sm:text-3xl md:text-5xl text-white leading-tight mb-8 sm:mb-10 md:mb-14 tracking-tighter block font-serif uppercase"
                         text={t.raw('title')}
                     />
 
 
                     <BrandText
                         ref={textRef}
-                        className="text-white/80 text-base sm:text-lg md:text-2xl mb-8 md:mb-14 max-w-2xl leading-relaxed font-light mx-auto block rubik-dirt-regular"
+                        className="text-white/80 text-base sm:text-lg md:text-2xl mb-8 md:mb-14 max-w-2xl leading-relaxed font-light mx-auto block"
                         text={String(t.raw('subtitle') || '').replace(/<\/?[^>]+(>|$)/g, "")}
                     />
 

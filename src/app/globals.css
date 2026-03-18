@@ -11,10 +11,10 @@
   --color-secondary: #d4af37;
   --color-accent: #f6ad55;
 
-  --font-audiowide: var(--font-audiowide);
-  --font-rubik-dirt: var(--font-rubik-dirt);
-  --font-family-audiowide: var(--font-audiowide);
-  --font-family-rubik-dirt: var(--font-rubik-dirt);
+  --font-cormorant: var(--font-cormorant);
+  --font-plus-jakarta: var(--font-plus-jakarta);
+  --font-family-cormorant: var(--font-cormorant);
+  --font-family-plus-jakarta: var(--font-plus-jakarta);
 }
 
 :root {
@@ -47,23 +47,18 @@ body {
 }
 
 h1,
+h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-montserrat), sans-serif;
+  font-family: var(--font-cormorant), serif;
 }
 
-h2 {
-  font-family: var(--font-playfair), serif;
-}
-
-p {
-  font-family: var(--font-playfair), serif !important;
-}
-
+body,
+p,
 span {
-  font-family: var(--font-poppins), sans-serif;
+  font-family: var(--font-plus-jakarta), sans-serif;
 }
 
 [lang="ar"] body,
@@ -113,15 +108,4 @@ span {
     text-shadow: 0 0 20px rgba(255, 215, 0, 0.8) !important;
   }
 
-  .audiowide-regular {
-    font-family: var(--font-audiowide), "Audiowide", cursive !important;
-    font-weight: 400 !important;
-    font-style: normal !important;
-  }
-
-  .rubik-dirt-regular {
-    font-family: var(--font-rubik-dirt), "Rubik Dirt", system-ui !important;
-    font-weight: 400 !important;
-    font-style: normal !important;
-  }
 }
