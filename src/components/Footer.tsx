@@ -29,10 +29,16 @@ const Footer = () => {
                             text={t.raw('description').replace(/<\/?[^>]+(>|$)/g, "")}
                         />
                         <div className="flex gap-4">
-                            {[Facebook, Instagram, Twitter, Linkedin].map((Icon, i) => (
+                            {[
+                                { Icon: Facebook, href: "https://www.facebook.com/taw10.ma?locale=ar_AR" },
+                                { Icon: Instagram, href: "https://www.instagram.com/tawteen_10/" },
+
+                            ].map(({ Icon, href }, i) => (
                                 <a
                                     key={i}
-                                    href="#"
+                                    href={href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-secondary hover:text-primary transition-all duration-300"
                                 >
                                     <Icon size={18} />
