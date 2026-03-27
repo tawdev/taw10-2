@@ -7,6 +7,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { Menu, X, Phone, Clock, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { gsap, useGSAP } from "@/lib/gsap-animations";
+import { motion, AnimatePresence } from "framer-motion";
 import MagneticButton from "./MagneticButton";
 
 const Navbar = () => {
@@ -179,7 +180,25 @@ const Navbar = () => {
 
                         {/* CTA with Magnetic Effect */}
                         <div className="hidden lg:flex items-center gap-4">
-                            <div className="h-8 w-[1px] bg-gray-100 me-2" />
+                            {/* Navbar Language Switcher - Only visible on scroll on desktop */}
+                            <AnimatePresence>
+                                {scrolled && (
+                                    <motion.div 
+                                        initial={{ opacity: 0, x: 20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        exit={{ opacity: 0, x: 20 }}
+                                        className="flex items-center gap-3 text-[11px] font-bold text-white/60 bg-white/5 px-4 py-2 rounded-full border border-white/10 me-2"
+                                    >
+                                        <Link href={pathname} locale="fr" className={cn("hover:text-secondary transition-colors", locale === 'fr' ? "text-secondary" : "")}>FR</Link>
+                                        <span className="w-1 h-1 rounded-full bg-white/10" />
+                                        <Link href={pathname} locale="ar" className={cn("hover:text-secondary transition-colors", locale === 'ar' ? "text-secondary" : "")}>AR</Link>
+                                        <span className="w-1 h-1 rounded-full bg-white/10" />
+                                        <Link href={pathname} locale="en" className={cn("hover:text-secondary transition-colors", locale === 'en' ? "text-secondary" : "")}>EN</Link>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+
+                            <div className="h-8 w-[1px] bg-white/10 me-2" />
                             <MagneticButton>
                                 <Link
                                     href="/#contact"
