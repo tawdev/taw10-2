@@ -245,6 +245,14 @@
             "3": {
                 "content": "Depuis que nous avons choisi TAW 10, notre entreprise a gagné en visibilité et en crédibilité. Leur accompagnement est exceptionnel, et leur service en ligne est très pratique.",
                 "role": "Entrepreneur"
+            },
+            "4": {
+                "content": "Un service de création d'entreprise d'une efficacité rare au Maroc. L'accompagnement juridique nous a épargné des semaines de démarches administratives. Une équipe au top !",
+                "role": "Consultant Stratégique"
+            },
+            "5": {
+                "content": "La domiciliation chez TAW 10 nous a permis de gagner en crédibilité dès le premier jour. Leurs bureaux à Marrakech sont modernes et parfaits pour accueillir nos clients.",
+                "role": "Directeur Agence Digitale"
             }
         }
     },
