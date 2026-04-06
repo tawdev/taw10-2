@@ -97,14 +97,14 @@ const Hero = () => {
                 <div className="max-w-4xl mx-auto text-center">
                     <BrandText
                         ref={titleRef}
-                        className="text-2xl sm:text-3xl md:text-5xl text-white leading-tight mb-8 sm:mb-10 md:mb-14 tracking-tighter block font-serif uppercase"
+                        className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-cormorant font-normal text-white leading-tight mb-8 sm:mb-10 tracking-normal block text-balance"
                         text={t.raw('title')}
                     />
 
 
                     <BrandText
                         ref={textRef}
-                        className="text-white/80 text-base sm:text-lg md:text-2xl mb-8 md:mb-14 max-w-2xl leading-relaxed font-light mx-auto block"
+                        className="text-white/80 text-lg sm:text-xl md:text-[1.35rem] font-plus-jakarta mb-10 md:mb-16 max-w-3xl leading-relaxed font-light mx-auto block text-balance"
                         text={String(t.raw('subtitle') || '').replace(/<\/?[^>]+(>|$)/g, "")}
                     />
 
@@ -115,7 +115,7 @@ const Hero = () => {
                         <MagneticButton>
                             <a
                                 href="#contact"
-                                className="bg-secondary text-primary px-8 py-4 md:px-10 md:py-5 rounded-full font-bold text-lg md:text-xl flex items-center font-montserrat gap-3 md:gap-4 hover:bg-white transition-all shadow-2xl group overflow-hidden relative"
+                                className="bg-secondary text-primary px-8 py-4 md:px-10 md:py-5 rounded-full font-bold text-lg md:text-xl flex items-center gap-3 md:gap-4 hover:bg-white transition-all shadow-2xl group overflow-hidden relative"
                             >
                                 <span className="relative z-10">{t('cta')}</span>
                                 <ArrowRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform relative z-10" />

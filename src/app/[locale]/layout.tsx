@@ -12,6 +12,7 @@ import CustomCursor from "@/components/CustomCursor";
 import Preloader from "@/components/Preloader";
 import WhatsappContact from "@/components/WhatsappContact";
 import JsonLd from "@/components/JsonLd";
+import CookieConsent from "@/components/CookieConsent";
 
 const montserrat = Montserrat({
     variable: "--font-montserrat",
@@ -182,6 +183,7 @@ export default async function LocaleLayout({
                         </div>
                         <WhatsappContact />
                     </SmoothScroll>
+                    <CookieConsent />
                 </NextIntlClientProvider>
 
                 {/* Google Analytics */}
